@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CURATA GALERÍA · Catálogo</title>
-<meta name="description" content="Catálogo de CURATA GALERÍA by Distrito Juanambú. Marcas y productos seleccionados por su diseño, calidad y autenticidad. Pide por WhatsApp.">
-<meta name="theme-color" content="#FDF8F2">
-<meta property="og:title" content="CURATA GALERÍA · Catálogo">
-<meta property="og:description" content="Marcas y productos seleccionados por su diseño, calidad y autenticidad. Pide por WhatsApp.">
+<title>CURATA GALERÍA · by Distrito Juanambú</title>
+<meta name="description" content="Las marcas que reúne Distrito Juanambú, en una sola mesa. Compra desde Cali o desde cualquier parte de Colombia.">
+<meta name="theme-color" content="#FDF7F1">
+<meta property="og:title" content="CURATA GALERÍA · by Distrito Juanambú">
+<meta property="og:description" content="Lo distinto, sobre la misma mesa. Las marcas que reúne Distrito Juanambú, con envíos a toda Colombia.">
 <meta property="og:image" content="https://distritojuanambu.github.io/curata/og.jpg">
 <meta property="og:url" content="https://distritojuanambu.github.io/curata/">
 <meta property="og:type" content="website">
@@ -15,168 +15,200 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-/* ===== Colores y tipografía (marfil y café del logo) ===== */
-:root{
-  --bg:#FDF8F2; --surface:#F6EEE4; --line:#E7DACB; --ink:#2C1909; --brand:#532C09;
-  --muted:#7A6453; --wa:#17784A; --wa-ink:#fff; --danger:#8A2D1F;
-  --serif:"Bodoni Moda", "Didot", Georgia, serif;
-  --sans:"Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --r:14px; --gut:16px; color-scheme:light;
-}
+/* Manual de marca "La mesa": marfil, café y mesa; una sola letra (DM Sans); el logo es la única serifa */
+:root{--marfil:#FDF7F1;--cafe:#522A0A;--mesa:#EADFD0;--suave:rgba(82,42,10,.72);--linea:rgba(82,42,10,.16);--gut:16px;--f:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--marfil);color:var(--cafe);font:400 16px/1.5 var(--f);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
 [hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--cafe);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-/* Logo: el PNG transparente se usa como máscara, así toma el color de la marca */
-.logo{display:block;background:var(--brand);-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat;aspect-ratio:640/214}
-.mono{background:var(--brand);-webkit-mask:url(mono.png) center/contain no-repeat;mask:url(mono.png) center/contain no-repeat;aspect-ratio:541/640}
-
-/* ===== Encabezado ===== */
-.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
-.top.scrolled{border-bottom-color:var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
-.brandlink{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brandlink .logo{height:34px}
-.by{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
-.btn-wa-top{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:500;font-size:14px;text-decoration:none}
-.btn-wa-top svg{width:18px;height:18px;color:var(--wa)}
-
-/* Departamentos */
-.deps{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 0 12px;scroll-padding:0 var(--gut)}
-.deps::-webkit-scrollbar{display:none}
-.dep{flex:0 0 auto;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;font-size:14px;font-weight:500;white-space:nowrap;color:var(--ink)}
-.dep[aria-current="true"]{background:var(--brand);border-color:var(--brand);color:var(--bg)}
-.dep .n{opacity:.6;font-weight:400;margin-left:4px;font-size:12px}
-
-/* Intro */
-.intro{padding:28px 0 8px}
-.intro h1{font:400 clamp(28px,6.4vw,46px)/1.08 var(--serif);margin:0 0 10px;letter-spacing:-.01em;color:var(--brand)}
-.intro p{margin:0;color:var(--muted);max-width:56ch}
-.demo{margin:16px 0 0;padding:10px 14px;border:1px dashed var(--brand);border-radius:10px;font-size:13px;color:var(--brand);background:#fff}
-
-/* Herramientas: búsqueda, marca, orden */
-.tools{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:18px 0 6px}
-.search{grid-column:1/-1;position:relative}
-.search input{width:100%;height:46px;padding:0 14px 0 42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:16px}
-.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
-.sel{position:relative}
-.sel select{appearance:none;-webkit-appearance:none;width:100%;height:42px;padding:0 34px 0 12px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:14px}
-.sel::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-@media (max-width:699px){.tools.sin-marca .sel{grid-column:1/-1}}
-.count{font-size:13px;color:var(--muted);margin:8px 0 14px}
-
-/* Grilla y tarjetas */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 12px}
-.card{display:block;text-align:left;border:0;padding:0;background:none;color:inherit}
-.ph{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--surface);isolation:isolate}
-.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform .5s ease,opacity .3s}
+.et{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.35}
+/* Logo: CURATA (dibujo original) como máscara + GALERÍA en DM Sans con líneas, como en el manual */
+.wm{display:block;background:currentColor;-webkit-mask:url(wordmark.png) center/contain no-repeat;mask:url(wordmark.png) center/contain no-repeat;aspect-ratio:640/139}
+.logo{--w:240px;width:var(--w);display:block}
+.logo .gal{display:flex;align-items:center;justify-content:center;gap:calc(var(--w)*.035);margin-top:calc(var(--w)*.05);font-size:calc(var(--w)*.044);font-weight:500;letter-spacing:.62em;line-height:1}
+.logo .gal::before,.logo .gal::after{content:"";width:calc(var(--w)*.105);height:max(1px,calc(var(--w)*.0033));background:currentColor}
+.logo .gal span{margin-right:-.62em}
+/* Encabezado */
+.top{position:sticky;top:0;z-index:20;background:var(--marfil);border-bottom:1px solid transparent}
+.top.scrolled{border-bottom-color:var(--linea)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:56px}
+.bar .wm{height:20px}
+.wa-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;text-decoration:none;padding:8px 0}
+.wa-link svg{width:18px;height:18px}
+.nav{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;padding:2px 0 0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;padding:10px 0 9px;text-decoration:none;border-bottom:2px solid transparent;color:var(--suave)}
+.nav a[aria-current="page"]{color:var(--cafe);border-bottom-color:var(--cafe)}
+/* Portada: el lugar, la firma y la frase */
+/* La mesa: el gesto de CURATA. La mesa vista desde arriba; tocas un objeto y se acerca */
+.mesa{position:relative;background:var(--mesa);height:calc(100svh - 96px);min-height:520px;max-height:880px;overflow:hidden}
+.pista{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain}
+.pista::-webkit-scrollbar{display:none}
+.pista.mano{cursor:grab}.pista.arrastre{cursor:grabbing}
+.lienzo{position:relative;height:100%}
+.mesa-top{position:absolute;top:0;left:0;right:0;padding:20px var(--gut) 0;z-index:1;pointer-events:none}
+.mesa-top:empty{display:none}
+.mesa-top h1{font-size:26px;line-height:1.12;font-weight:400;margin:6px 0 0;letter-spacing:-.01em;max-width:16ch}
+.mesa-top .et{color:var(--suave)}
+.placa{position:absolute;left:var(--gut);top:0;bottom:56px;width:min(320px,74vw);display:flex;flex-direction:column;justify-content:center}
+.placa .logo{--w:min(230px,62vw)}
+.placa .et.sup{margin-top:28px;color:var(--suave)}
+.placa h1{font-size:30px;line-height:1.1;font-weight:400;margin:8px 0 10px;letter-spacing:-.01em}
+.placa p{margin:0;color:var(--suave);font-size:15px;max-width:34ch}
+.placa .firma{margin-top:18px}
+.obj{position:absolute;border:0;padding:0;background:none;text-align:left;-webkit-tap-highlight-color:transparent}
+.obj .ft{display:block;transform:rotate(var(--r));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.obj img,.foco .lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 7%,#000 93%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
+.obj img{mix-blend-mode:multiply}
+.obj .et{display:block;margin:4px 0 0 7%;font-size:11px}
+.obj:hover .ft{transform:rotate(var(--r)) scale(1.035)}
+.obj.fuera{visibility:hidden}
+.mesa-pie{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px var(--gut) calc(14px + env(safe-area-inset-bottom));pointer-events:none}
+.mesa-pie>*{pointer-events:auto}
+.mesa-pie .ir{border:0;background:none;padding:6px 0;font-weight:500;font-size:14px}
+.flechas{display:none;gap:8px}
+.flechas button{width:44px;height:44px;border:1px solid var(--cafe);background:transparent;border-radius:50%;font-size:18px;line-height:1}
+.guia{color:var(--suave)}
+/* Foco: el objeto elegido se acerca y el resto de la mesa queda detrás */
+.foco{position:fixed;inset:0;z-index:35;overflow-y:auto;overscroll-behavior:contain;background:rgba(234,223,208,.62);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;transition:opacity .35s ease}
+.foco.on{opacity:1}
+.foco .x{position:fixed;top:8px;right:6px;z-index:3}
+.foco .caja{padding:60px var(--gut) 40px}
+.foco .lugar{position:relative;z-index:2;width:min(76vw,400px,calc((100svh - 330px)*.8));min-width:200px;margin:0 auto}
+.foco .panel{max-width:420px;margin:0 auto;padding-top:16px;opacity:0;transform:translateY(10px);transition:opacity .3s ease .18s,transform .3s ease .18s}
+.foco.on .panel{opacity:1;transform:none}
+.foco .panel h2{font-size:26px;line-height:1.15;font-weight:400;margin:4px 0 6px}
+.foco .panel .pre{font-size:17px;font-weight:500;margin:0}
+.foco .acc{display:flex;gap:8px;margin-top:18px}
+.foco .acc .btn{flex:1}
+.foco .mas{display:inline-block;margin-top:14px;border:0;background:none;padding:6px 0;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+/* Títulos y herramientas */
+.cab{padding:32px 0 8px}
+.cab h2{font-size:30px;line-height:1.12;font-weight:400;margin:6px 0 8px;letter-spacing:-.01em}
+.cab p{margin:0;color:var(--suave);max-width:60ch}
+.cab .ig{display:inline-block;margin-top:10px;font-weight:500}
+.cab .mlogo{max-height:56px;max-width:160px;object-fit:contain;margin:0 0 14px}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;padding:18px 0 4px}
+.buscar{grid-column:1/-1;position:relative}
+.buscar input{width:100%;height:44px;padding:0 0 0 30px;border:0;border-bottom:1px solid var(--cafe);background:transparent;font-size:16px;border-radius:0}
+.buscar input::placeholder{color:var(--suave)}
+.buscar svg{position:absolute;left:0;top:50%;transform:translateY(-50%);width:18px;height:18px}
+.sel select{appearance:none;-webkit-appearance:none;width:100%;height:40px;padding:0 26px 0 0;border:0;border-bottom:1px solid var(--linea);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23522A0A' stroke-width='1.5'/%3E%3C/svg%3E") right 4px center/11px no-repeat;font-size:14px;border-radius:0}
+.cuenta{font-size:13px;color:var(--suave);margin:12px 0 16px}
+/* Grilla: la mesa, la etiqueta, el orden */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 12px}
+.card{display:flex;flex-direction:column;align-self:start;text-align:left;border:0;padding:0;background:none}
+.ph{position:relative;aspect-ratio:4/5;background:var(--mesa);overflow:hidden}
+.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
 .ph img[data-ok="0"]{opacity:0}
-.card:hover .ph img{transform:scale(1.03)}
-.nofoto{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:10px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.nofoto .mono{width:38px;opacity:.35}
-.tag{position:absolute;z-index:2;top:10px;left:10px;padding:4px 9px;border-radius:999px;background:var(--bg);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-.tag.out{color:var(--danger)}
-.card.agotado .ph img{filter:grayscale(.6);opacity:.75}
-.meta{padding:10px 2px 0}
-.marca{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 3px}
-.nombre{font:400 16px/1.25 var(--serif);margin:0 0 6px;color:var(--ink)}
-.precio{font-weight:600;font-size:15px;margin:0}
-.empty{padding:48px 0;text-align:center;color:var(--muted)}
-.empty .mono{width:44px;margin:0 auto 14px;opacity:.35}
-.empty button{margin-top:14px}
-.skel .ph{animation:pulse 1.4s ease-in-out infinite}
-.skel .l{height:10px;border-radius:6px;background:var(--surface);margin:10px 0 6px;width:40%}
-.skel .l.b{width:75%;height:14px}
-@keyframes pulse{50%{opacity:.55}}
-
+.ph .pend{position:absolute;inset:0;display:grid;place-items:center;color:var(--suave)}
+.ph img[data-ok="1"]+.pend{display:none}
+.card .et{margin:12px 0 4px}
+.card .nom{margin:0;font-size:16px;line-height:1.3}
+.card .pre{margin:4px 0 0;font-size:15px;font-weight:500}
+.card .ago{color:var(--suave);font-weight:400}
+.vacio{grid-column:1/-1;padding:40px 0;color:var(--suave);max-width:44ch}
+.vacio button{margin-top:16px}
+.skel .ph{animation:p 1.4s ease-in-out infinite}
+@keyframes p{50%{opacity:.6}}
+/* Marcas */
+.marcas{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--linea)}
+.marcas li{border-bottom:1px solid var(--linea)}
+.marcas a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;text-decoration:none}
+.marcas .n{font-size:18px;font-weight:500}
+.marcas .et{color:var(--suave);margin-top:2px}
+.otras{margin:40px 0 0;color:var(--suave);font-size:15px;line-height:1.9}
+.otras h3{margin:0 0 6px;color:var(--cafe)}
+.otras a{text-decoration:none}
+.otras a:hover{text-decoration:underline}
 /* Botones */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--brand);background:transparent;font-weight:600;font-size:15px;text-decoration:none;color:var(--brand)}
-.btn.wa{background:var(--wa);border-color:var(--wa);color:var(--wa-ink);width:100%}
-.btn.wa svg{width:20px;height:20px}
-.btn.ghost{border-color:var(--line);color:var(--ink);font-weight:500}
-
-/* WhatsApp flotante */
-.flo{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:15;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--wa);color:#fff;border:0;box-shadow:0 6px 20px rgba(44,25,9,.22);text-decoration:none}
-.flo svg{width:28px;height:28px}
-
-/* ===== Ficha de producto ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 22px;border:1px solid var(--cafe);background:var(--cafe);color:var(--marfil);font-weight:500;font-size:16px;text-decoration:none;border-radius:2px}
+.btn svg{width:20px;height:20px}
+.btn.claro{background:transparent;color:var(--cafe)}
+.btn.inv{background:var(--marfil);color:var(--cafe);border-color:var(--marfil)}
+/* Ficha de producto */
 .ficha{position:fixed;inset:0;z-index:40;display:none}
 .ficha.on{display:block}
-.velo{position:absolute;inset:0;background:rgba(44,25,9,.38);animation:fade .2s ease}
-.hoja{position:absolute;inset:0;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;animation:up .28s cubic-bezier(.2,.8,.2,1)}
-@keyframes fade{from{opacity:0}}
-@keyframes up{from{transform:translateY(24px);opacity:0}}
-.hoja-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:10px 10px 10px var(--gut);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.hoja-top .dep-l{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center}
-.x svg{width:18px;height:18px}
-.galeria{position:relative}
+.velo{position:absolute;inset:0;background:rgba(82,42,10,.42)}
+.hoja{position:absolute;inset:0;background:var(--marfil);overflow-y:auto;overscroll-behavior:contain;animation:sube .25s ease-out}
+@keyframes sube{from{transform:translateY(16px);opacity:0}}
+.hoja-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 6px 0 var(--gut);background:var(--marfil)}
+.x{width:44px;height:44px;border:0;background:none;display:grid;place-items:center}
+.x svg{width:20px;height:20px}
 .fotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .fotos::-webkit-scrollbar{display:none}
-.fotos .ph{flex:0 0 100%;scroll-snap-align:start;border-radius:0}
+.fotos .ph{flex:0 0 100%;scroll-snap-align:start}
 .puntos{display:flex;justify-content:center;gap:6px;padding:10px 0 0}
-.puntos i{width:6px;height:6px;border-radius:50%;background:var(--line)}
-.puntos i.on{background:var(--brand)}
-.miniaturas{display:none}
-.info{padding:18px var(--gut) 120px}
-.info .marca{font-size:12px}
-.info h2{font:400 28px/1.15 var(--serif);margin:2px 0 10px;color:var(--brand)}
-.info .precio{font-size:20px}
-.estado-out{display:inline-block;margin-left:10px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--danger)}
-.grupo{margin:22px 0 0}
-.grupo h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 10px}
+.puntos i{width:6px;height:6px;border-radius:50%;background:var(--linea)}
+.puntos i.on{background:var(--cafe)}
+.minis{display:none}
+.info{padding:16px var(--gut) 132px}
+.info h2{font-size:28px;line-height:1.15;font-weight:400;margin:6px 0 8px;letter-spacing:-.01em}
+.info .pre{font-size:18px;font-weight:500;margin:0}
+.grupo{margin:24px 0 0}
+.grupo h3{margin:0 0 10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-width:48px;height:42px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:#fff;font-size:14px;font-weight:500}
-.chip[aria-pressed="true"]{border-color:var(--brand);background:var(--brand);color:var(--bg)}
-.chip.static{cursor:default}
-.desc{white-space:pre-line;color:var(--ink);margin:0}
-.cod{margin:22px 0 0;font-size:12px;color:var(--muted)}
-.acciones{position:fixed;left:0;right:0;bottom:0;z-index:3;padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg) 70%,transparent);display:flex;gap:8px}
-.acciones .btn.ghost{flex:0 0 52px;padding:0}
-.acciones .btn.ghost svg{width:20px;height:20px}
-.aviso{font-size:12px;color:var(--danger);margin:10px 0 0}
-.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:14px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
+.chip{min-width:48px;height:44px;padding:0 14px;border:1px solid var(--linea);background:transparent;font-size:15px;border-radius:2px}
+.chip[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
+.desc{white-space:pre-line;margin:0}
+.sobre{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--linea)}
+.sobre p{margin:0 0 8px;color:var(--suave)}
+.sobre a{font-weight:500}
+.cod{margin:18px 0 0;font-size:13px;color:var(--suave)}
+.acciones{position:fixed;left:0;right:0;bottom:0;z-index:3;padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));background:var(--marfil);border-top:1px solid var(--linea)}
+.acciones .fila{display:flex;gap:8px}
+.acciones .btn{flex:1}
+.acciones .btn.claro{flex:0 0 52px;padding:0}
+.nota{margin:8px 0 0;font-size:13px;color:var(--suave);text-align:center}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--cafe);color:var(--marfil);padding:10px 16px;font-size:14px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.on{opacity:1}
-
-/* Pie */
-.pie{margin-top:64px;border-top:1px solid var(--line);padding:32px 0 calc(96px + env(safe-area-inset-bottom));color:var(--muted);font-size:13px}
-.pie .logo{height:40px;margin:0 0 10px;width:auto}
-.pie p{margin:6px 0}
-.pie a{color:var(--brand)}
-
-/* ===== Pantallas grandes ===== */
+/* Cierre */
+.pie{margin-top:72px;background:var(--cafe);color:var(--marfil);padding:44px 0 calc(40px + env(safe-area-inset-bottom))}
+.pie .logo{--w:220px;color:var(--marfil)}
+.pie .frase{font-size:22px;line-height:1.2;margin:24px 0 8px}
+.pie .cols{display:grid;gap:18px;margin-top:28px;font-size:15px}
+.pie .cols p{margin:4px 0 0;opacity:.86}
+.pie a{color:var(--marfil)}
+.pie .legal{margin-top:32px;font-size:13px;opacity:.7}
 @media (min-width:700px){
-  .grid{grid-template-columns:repeat(3,1fr);gap:32px 20px}
-  .tools{grid-template-columns:1fr 200px 200px}
-  .search{grid-column:auto}
-  .intro{padding:40px 0 8px}
+  .grid{grid-template-columns:repeat(3,1fr);gap:40px 20px}
+  .placa h1{font-size:40px}
+  .placa{width:360px;left:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)))}
+  .placa .logo{--w:280px}
+  .flechas{display:flex}
+  .mesa-pie{padding-left:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)));padding-right:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)))}
+  .tools{grid-template-columns:1fr 150px 150px 150px;align-items:end}
+  .buscar{grid-column:auto}
+  .cab h2{font-size:44px}
+  .pie .cols{grid-template-columns:repeat(3,1fr)}
 }
 @media (min-width:1024px){
   .grid{grid-template-columns:repeat(4,1fr)}
-  .bar{height:76px}
-  .brandlink .logo{height:42px}
-  .hoja{inset:4vh auto 4vh 50%;transform:translateX(-50%);width:min(1040px,94vw);border-radius:18px;animation:fade .2s ease}
-  .hoja-in{display:grid;grid-template-columns:1.1fr 1fr;gap:8px;align-items:start}
+  .placa h1{font-size:48px}
+  .foco .caja{min-height:100%;display:grid;grid-template-columns:auto 380px;gap:56px;align-items:center;justify-content:center;padding:48px}
+  .foco .lugar{width:min(40vw,460px,calc((100svh - 120px)*.8));margin:0}
+  .foco .panel{margin:0;padding:0}
+  .cab h2{font-size:52px}
+  .hoja{inset:4vh auto 4vh 50%;transform:translateX(-50%);width:min(1080px,94vw);animation:none}
+  .hoja-in{display:grid;grid-template-columns:1.1fr 1fr;gap:12px;align-items:start}
   .galeria{padding:0 0 24px var(--gut)}
-  .fotos .ph{border-radius:var(--r);aspect-ratio:auto;height:min(70vh,640px)}
-  .info{padding:4px 32px 32px}
-  .acciones{position:static;background:none;padding:24px 0 0}
-  .miniaturas{display:flex;gap:8px;margin-top:10px}
-  .miniaturas button{width:64px;aspect-ratio:4/5;padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
-  .miniaturas button[aria-current="true"]{border-color:var(--brand)}
-  .miniaturas img{width:100%;height:100%;object-fit:cover}
+  .info{padding:0 36px 36px}
+  .acciones{position:static;border:0;padding:28px 0 0;background:none}
+  .nota{text-align:left}
+  .minis{display:flex;gap:8px;margin-top:10px}
+  .minis button{width:64px;aspect-ratio:4/5;padding:0;border:1px solid transparent;background:var(--mesa);overflow:hidden}
+  .minis button[aria-current="true"]{border-color:var(--cafe)}
+  .minis img{width:100%;height:100%;object-fit:cover}
   .puntos{display:none}
-  .flo{right:28px;bottom:28px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -185,368 +217,417 @@ a{color:inherit}
 <header class="top" id="top">
   <div class="wrap">
     <div class="bar">
-      <a class="brandlink" href="#/" aria-label="CURATA GALERÍA, inicio"><span class="logo" style="width:auto"></span></a>
-      <a class="btn-wa-top" id="waTop" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg><span>WhatsApp</span></a>
+      <a href="#/" aria-label="CURATA, inicio"><span class="wm" style="width:92px"></span></a>
+      <a class="wa-link" id="waTop" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos</a>
     </div>
-    <nav class="deps" id="deps" aria-label="Departamentos"></nav>
+    <nav class="nav et" id="nav" aria-label="Departamentos"></nav>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="intro">
-    <h1 id="titulo">Todo el catálogo</h1>
-    <p id="frase">Una cuidadosa curaduría de marcas y productos seleccionados por su diseño, calidad y autenticidad.</p>
-    <div class="demo" id="demo" hidden>Vista de ejemplo: estos productos no son reales. Se reemplazan solos cuando la hoja de productos esté conectada.</div>
-  </section>
+<section class="mesa" id="mesa" aria-label="La mesa de la semana">
+  <div class="mesa-top" id="mesaTop"></div>
+  <div class="pista" id="pista"><div class="lienzo" id="lienzo"></div></div>
+  <div class="mesa-pie"><span class="et guia" id="guia">Desliza para recorrer la mesa</span><span class="flechas"><button type="button" data-mover="-1" aria-label="Mover la mesa a la izquierda">←</button><button type="button" data-mover="1" aria-label="Mover la mesa a la derecha">→</button></span><button class="ir" type="button" data-ircatalogo>Ver catálogo ↓</button></div>
+</section>
+<div class="foco" id="foco" role="dialog" aria-modal="true" aria-labelledby="focoNom" hidden></div>
 
-  <div class="tools">
-    <label class="search"><span class="sr">Buscar</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Buscar producto o marca" autocomplete="off" enterkeyhint="search">
-    </label>
-    <label class="sel"><span class="sr">Marca</span><select id="fMarca"><option value="">Todas las marcas</option></select></label>
-    <label class="sel"><span class="sr">Ordenar</span><select id="fOrden">
-      <option value="rec">Recomendados</option><option value="new">Más nuevos</option>
-      <option value="asc">Menor precio</option><option value="desc">Mayor precio</option>
-    </select></label>
+<main class="wrap">
+  <div class="cab" id="cab"></div>
+  <div class="tools" id="tools">
+    <label class="buscar"><span class="sr">Buscar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar por producto o marca" autocomplete="off" enterkeyhint="search"></label>
+    <label class="sel"><span class="sr">Marca</span><select id="fMarca"></select></label>
+    <label class="sel"><span class="sr">Talla</span><select id="fTalla"></select></label>
+    <label class="sel"><span class="sr">Ordenar</span><select id="fOrden"><option value="rec">Destacados</option><option value="new">Lo más nuevo</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
   </div>
-  <p class="count" id="count" aria-live="polite"></p>
-  <div class="grid" id="grid"></div>
+  <p class="cuenta" id="cuenta" aria-live="polite"></p>
+  <div id="cuerpo"><div class="grid" id="grid"></div></div>
 </main>
 
 <footer class="pie">
   <div class="wrap">
-    <span class="logo" style="width:120px"></span>
-    <p>by Distrito Juanambú · Cali, Colombia</p>
-    <p>Precios en pesos colombianos. Precios y disponibilidad pueden cambiar; te confirmamos todo por WhatsApp antes de tu pedido.</p>
-    <p id="redes"></p>
+    <span class="logo" aria-label="CURATA GALERÍA"><span class="wm"></span><span class="gal" aria-hidden="true"><span>GALERÍA</span></span></span>
+    <p class="frase">Lo distinto, sobre la misma mesa.</p>
+    <span class="et">by Distrito Juanambú · Cali</span>
+    <div class="cols">
+      <div><span class="et">Escríbenos</span><p><a id="waPie" href="#" target="_blank" rel="noopener">WhatsApp</a></p></div>
+      <div><span class="et">Síguenos</span><p id="igPie">Instagram</p></div>
+      <div><span class="et">Visítanos</span><p>Distrito Juanambú<br>Av. 9A #7N-111, Granada, Cali</p></div>
+    </div>
+    <p class="legal">Precios en pesos colombianos. Antes de cada pedido te confirmamos talla, disponibilidad y envío por WhatsApp.</p>
   </div>
 </footer>
 
-<a class="flo" id="waFlo" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
-
-<div class="ficha" id="ficha" role="dialog" aria-modal="true" aria-labelledby="fNombre">
+<div class="ficha" id="ficha" role="dialog" aria-modal="true" aria-labelledby="fNom">
   <div class="velo" data-cerrar></div>
   <div class="hoja" id="hoja"></div>
 </div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
-/* ============================================================
-   CONFIGURACIÓN
-   SHEET_ID: el código de la hoja de Google (lo que va entre /d/ y /edit en su enlace).
-   La hoja debe estar compartida como "Cualquier persona con el enlace: Lector".
-   Pestañas: "Productos" y "Ajustes". Si SHEET_ID está vacío, se muestra una vista de ejemplo.
-   ============================================================ */
+/* CONFIGURACIÓN: hoja de Google compartida como "Cualquier persona con el enlace: Lector".
+   Pestañas: Productos, Ajustes y Marcas. Sin SHEET_ID se muestra una vista de ejemplo. */
 var SHEET_ID = '1XghjIwfRyXiBwEqABOxwMHMXqg0XCbx5xaNPna388Nw';
-var HOJA_PRODUCTOS = 'Productos';
-var HOJA_AJUSTES = 'Ajustes';
-
 (function () {
   'use strict';
-  var WA_SVG = document.querySelector('#waFlo svg').outerHTML;
-  var S = { prods: [], aj: {}, deps: [], dep: '', q: '', marca: '', orden: 'rec', abierto: null, talla: '', color: '', demo: false };
-  var $ = function (s, r) { return (r || document).querySelector(s); };
-  var CACHE = 'curata-catalogo-v1';
+  var WA = document.querySelector('#waTop svg').outerHTML;
+  var S = { prods: [], aj: {}, marcas: {}, deps: [], vista: 'todo', clave: '', q: '', marca: '', talla: '', orden: 'rec', abierto: null, sel: {} };
+  var $ = function (s) { return document.querySelector(s); };
+  var CACHE = 'curata-v2';
 
-  /* ---------- utilidades ---------- */
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
   function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function lista(s) { return String(s || '').split(/[,;\n\/|]+/).map(function (x) { return x.trim(); }).filter(Boolean); }
   function cop(n) { return n ? '$' + Math.round(n).toLocaleString('es-CO').replace(/,/g, '.') : ''; }
-  function aNumero(v) {
-    var s = String(v == null ? '' : v).trim(); if (!s) return 0;
-    s = s.replace(/[.,]\d{2}$/, ''); s = s.replace(/[^\d]/g, '');
-    return s ? Number(s) : 0;
-  }
-  function si(v) { return /^(s[ií]|x|true|1|verdadero|yes)$/i.test(String(v || '').trim()); }
+  function num(v) { var s = String(v == null ? '' : v).trim().replace(/[.,]\d{2}$/, '').replace(/[^\d]/g, ''); return s ? Number(s) : 0; }
+  function si(v) { return /^(s[ií]|x|true|1)$/i.test(String(v || '').trim()); }
   function toast(t) { var e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function () { e.classList.remove('on'); }, 2200); }
-
-  /* Fotos: acepta enlaces de Google Drive (se convierten a imagen) o enlaces directos a una imagen */
-  function foto(u, ancho) {
+  function foto(u, w) {
     u = String(u || '').trim(); if (!u) return '';
-    var m = u.match(/\/d\/([\w-]{20,})/) || u.match(/[?&]id=([\w-]{20,})/) || (/^[\w-]{25,}$/.test(u) ? [0, u] : null);
-    if (m && (u.indexOf('google') > -1 || /^[\w-]{25,}$/.test(u))) return 'https://lh3.googleusercontent.com/d/' + m[1] + '=w' + (ancho || 900);
-    return /^https?:\/\//.test(u) ? u : '';
+    var m = u.match(/\/d\/([\w-]{20,})/) || u.match(/[?&]id=([\w-]{20,})/);
+    if (m && /google/.test(u)) return 'https://lh3.googleusercontent.com/d/' + m[1] + '=w' + (w || 900);
+    if (/^https?:\/\//.test(u)) return u;
+    return /^[\w\-./]+\.(jpe?g|png|webp|avif)$/i.test(u) ? u : '';
   }
   function fotosDe(p) { return String(p.fotos || '').split(/[\s,;|]+/).filter(function (u) { return foto(u); }); }
+  /* Talla ordenada: letras, luego números */
+  var ORD = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'unica'];
+  function ordTalla(a, b) { var ia = ORD.indexOf(norm(a)), ib = ORD.indexOf(norm(b)); if (ia > -1 || ib > -1) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); return (parseFloat(a) || 0) - (parseFloat(b) || 0); }
 
-  /* ---------- CSV ---------- */
   function csv(t) {
-    var filas = [], f = [], c = '', q = false;
+    var F = [], f = [], c = '', q = false;
     for (var i = 0; i < t.length; i++) {
       var ch = t[i];
       if (q) { if (ch === '"') { if (t[i + 1] === '"') { c += '"'; i++; } else q = false; } else c += ch; }
       else if (ch === '"') q = true;
       else if (ch === ',') { f.push(c); c = ''; }
-      else if (ch === '\n' || ch === '\r') { if (ch === '\r' && t[i + 1] === '\n') i++; f.push(c); filas.push(f); f = []; c = ''; }
+      else if (ch === '\n' || ch === '\r') { if (ch === '\r' && t[i + 1] === '\n') i++; f.push(c); F.push(f); f = []; c = ''; }
       else c += ch;
     }
-    if (c !== '' || f.length) { f.push(c); filas.push(f); }
-    return filas;
+    if (c !== '' || f.length) { f.push(c); F.push(f); }
+    return F;
   }
-
-  /* ---------- datos ---------- */
-  var CAMPOS = { codigo: 'codigo', departamento: 'departamento', marca: 'marca', nombre: 'nombre', producto: 'nombre', precio: 'precio', tallas: 'tallas', talla: 'tallas', colores: 'colores', color: 'colores', descripcion: 'descripcion', fotos: 'fotos', foto: 'fotos', estado: 'estado', destacado: 'destacado' };
-  function aProductos(filas) {
+  function tabla(filas, campos) {
     if (!filas.length) return [];
-    var cab = filas[0].map(function (h) { return CAMPOS[norm(h).replace(/[^a-z]/g, '')] || ''; });
-    var out = [];
-    for (var r = 1; r < filas.length; r++) {
-      var p = { fila: r + 1 };
-      cab.forEach(function (k, i) { if (k) p[k] = (filas[r][i] || '').trim(); });
-      if (!p.nombre) continue;
-      var est = norm(p.estado);
-      if (est.indexOf('oculto') === 0 || est.indexOf('borrador') === 0) continue;
-      p.agotado = est.indexOf('agotado') === 0;
-      p.precioN = aNumero(p.precio);
-      p.cod = (p.codigo || ('P' + p.fila)).toUpperCase();
-      p.dest = si(p.destacado);
-      p.departamento = p.departamento || 'Otros';
-      out.push(p);
-    }
-    return out;
+    var cab = filas[0].map(function (h) { return campos[norm(h).replace(/[^a-z]/g, '')] || ''; });
+    return filas.slice(1).map(function (r, i) { var o = { fila: i + 2 }; cab.forEach(function (k, j) { if (k) o[k] = (r[j] || '').trim(); }); return o; });
   }
-  /* Ajustes: columnas A-B = Clave / Valor; la columna con título "Departamentos" = lista en el orden del menú */
-  function aAjustes(filas) {
-    var a = {}, dcol = -1, deps = [];
-    (filas[0] || []).forEach(function (h, i) { if (norm(h).indexOf('departamento') === 0) dcol = i; });
-    filas.forEach(function (f, i) {
-      if (i === 0) return;
-      var k = norm(f[0]).replace(/[^a-z]/g, ''); if (k) a[k] = (f[1] || '').trim();
-      if (dcol > -1 && f[dcol] && f[dcol].trim()) deps.push(f[dcol].trim());
-    });
-    if (deps.length) a.departamentos = deps.join(',');
-    return a;
-  }
-  function leerHoja(nombre) {
-    var url = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&headers=1&sheet=' + encodeURIComponent(nombre);
-    return fetch(url, { cache: 'no-store' }).then(function (r) {
-      if (!r.ok) throw new Error('http ' + r.status);
-      return r.text();
-    }).then(function (t) {
-      if (/^\s*</.test(t)) throw new Error('privada');
-      return csv(t);
+  var CP = { codigo: 'codigo', departamento: 'departamento', marca: 'marca', nombre: 'nombre', producto: 'nombre', precio: 'precio', tallas: 'tallas', talla: 'tallas', colores: 'colores', color: 'colores', descripcion: 'descripcion', fotos: 'fotos', foto: 'fotos', estado: 'estado', destacado: 'destacado', origen: 'origen' };
+  var CM = { marca: 'nombre', nombre: 'nombre', instagram: 'instagram', origen: 'origen', descripcion: 'descripcion', logo: 'logo' };
+  function productos(filas) {
+    return tabla(filas, CP).filter(function (p) {
+      if (!p.nombre) return false;
+      var e = norm(p.estado);
+      if (/^(oculto|borrador)/.test(e)) return false;
+      p.agotado = /^agotado/.test(e); p.precioN = num(p.precio); p.cod = (p.codigo || 'P' + p.fila).toUpperCase();
+      p.dest = si(p.destacado); p.departamento = p.departamento || 'Otros'; p.tallasL = lista(p.tallas).sort(ordTalla);
+      return true;
     });
   }
-  function demo() {
-    var d = [['Código', 'Departamento', 'Marca', 'Nombre', 'Precio', 'Tallas', 'Colores', 'Descripción', 'Fotos', 'Estado', 'Destacado']];
-    var deps = ['Zapatos', 'Accesorios', 'Blusas'];
-    for (var i = 1; i <= 9; i++) {
-      var dp = deps[(i - 1) % 3];
-      d.push(['EJ-' + String(i).padStart(3, '0'), dp, 'Marca de ejemplo', dp.replace(/s$/, '') + ' de ejemplo ' + i, String(100000 + i * 10000),
-        dp === 'Zapatos' ? '36, 37, 38, 39' : dp === 'Blusas' ? 'S, M, L' : '', dp === 'Accesorios' ? 'Dorado, Plateado' : 'Negro, Marfil',
-        'Producto de ejemplo para ver cómo se ve la ficha. Aquí va la descripción real: materiales, medidas y cuidados.', '', i === 4 ? 'Agotado' : 'Disponible', i < 3 ? 'Sí' : '']);
-    }
-    return { prods: aProductos(d), aj: { departamentos: 'Zapatos, Accesorios, Blusas' } };
+  function marcas(filas) { var m = {}; tabla(filas, CM).forEach(function (b) { if (b.nombre) m[slug(b.nombre)] = b; }); return m; }
+  function ajustes(filas) {
+    var a = {}, dc = -1, deps = [];
+    (filas[0] || []).forEach(function (h, i) { if (norm(h).indexOf('departamento') === 0) dc = i; });
+    filas.forEach(function (f, i) { if (!i) return; var k = norm(f[0]).replace(/[^a-z]/g, ''); if (k) a[k] = (f[1] || '').trim(); if (dc > -1 && f[dc] && f[dc].trim()) deps.push(f[dc].trim()); });
+    a.deps = deps; return a;
   }
-
-  function guardar(d) { try { localStorage.setItem(CACHE, JSON.stringify({ t: Date.now(), id: SHEET_ID, d: d })); } catch (e) {} }
-  function deCache() { try { var c = JSON.parse(localStorage.getItem(CACHE) || 'null'); return c && c.id === SHEET_ID ? c.d : null; } catch (e) { return null; } }
-
+  function leer(hoja) {
+    return fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&headers=1&sheet=' + encodeURIComponent(hoja), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (t) { if (/^\s*</.test(t)) throw new Error('privada'); return csv(t); });
+  }
+  function ejemplo() {
+    var d = [['Código', 'Departamento', 'Marca', 'Nombre', 'Precio', 'Tallas', 'Colores', 'Descripción', 'Fotos', 'Estado']];
+    ['Zapatos', 'Accesorios', 'Blusas', 'Zapatos', 'Blusas', 'Accesorios'].forEach(function (dp, i) { d.push(['EJ-' + (i + 1), dp, 'Marca de ejemplo', 'Producto de ejemplo ' + (i + 1), '', dp === 'Zapatos' ? '36, 37, 38' : dp === 'Blusas' ? 'S, M, L' : '', '', 'Vista de ejemplo.', '', i === 3 ? 'Agotado' : 'Disponible']); });
+    return { prods: productos(d), aj: { deps: ['Zapatos', 'Accesorios', 'Blusas'] }, marcas: {} };
+  }
+  function guardar(d) { try { localStorage.setItem(CACHE, JSON.stringify({ id: SHEET_ID, d: d })); } catch (e) {} }
+  function cache() { try { var c = JSON.parse(localStorage.getItem(CACHE) || 'null'); return c && c.id === SHEET_ID ? c.d : null; } catch (e) { return null; } }
   function cargar() {
-    if (!SHEET_ID) { S.demo = true; usar(demo()); return; }
-    var c = deCache(); if (c) usar(c);
-    Promise.all([leerHoja(HOJA_PRODUCTOS), leerHoja(HOJA_AJUSTES).catch(function () { return []; })])
-      .then(function (r) { var d = { prods: aProductos(r[0]), aj: aAjustes(r[1]) }; guardar(d); usar(d); })
-      .catch(function () {
-        if (!c) $('#grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><span class="mono" style="display:block"></span>No pudimos cargar el catálogo en este momento.<br>Revisa tu conexión e intenta de nuevo.<br><button class="btn ghost" type="button" onclick="location.reload()">Reintentar</button></div>';
-        $('#count').textContent = '';
-      });
+    if (!SHEET_ID) { usar(ejemplo()); return; }
+    var c = cache(); if (c) usar(c);
+    Promise.all([leer('Productos'), leer('Ajustes').catch(function () { return []; }), leer('Marcas').catch(function () { return []; })])
+      .then(function (r) { var d = { prods: productos(r[0]), aj: ajustes(r[1]), marcas: marcas(r[2]) }; guardar(d); usar(d); })
+      .catch(function () { if (!c) { $('#grid').innerHTML = '<div class="vacio">No pudimos cargar la mesa en este momento. Revisa tu conexión e intenta de nuevo.<br><button class="btn claro" type="button" onclick="location.reload()">Reintentar</button></div>'; $('#cuenta').textContent = ''; } });
   }
 
-  /* ---------- WhatsApp ---------- */
+  /* Datos derivados */
+  function marcaDe(p) { return S.marcas[slug(p.marca)] || null; }
+  function origenDe(p) { var m = marcaDe(p); return p.origen || (m && m.origen) || ''; }
+  function etiqueta(p) { return [p.marca, origenDe(p), p.departamento].filter(Boolean).join(' · '); }
+  function igUrl(h) { h = String(h || '').trim().replace(/^@/, ''); return !h ? '' : /^https?:/.test(h) ? h : 'https://www.instagram.com/' + h + '/'; }
+  function igTxt(h) { return '@' + String(h).replace(/^https?:\/\/(www\.)?instagram\.com\//, '').replace(/^@/, '').replace(/\/$/, ''); }
+
+  /* WhatsApp */
   function waNum() { return String(S.aj.whatsapp || '').replace(/\D/g, ''); }
-  function waLink(txt) { var n = waNum(); return n ? 'https://wa.me/' + n + '?text=' + encodeURIComponent(txt) : ''; }
-  function linkProducto(p) { return location.href.split('#')[0] + '#/p/' + encodeURIComponent(p.cod); }
-  function textoPedido(p) {
-    var l = ['Hola, me interesa este producto del catálogo CURATA:', '', '• ' + p.nombre + (p.marca ? ' — ' + p.marca : '')];
-    if (S.talla) l.push('• Talla: ' + S.talla); else if (lista(p.tallas).length) l.push('• Talla: (por definir)');
-    if (S.color) l.push('• Color: ' + S.color);
+  function waLink(t) { var n = waNum(); return n ? 'https://wa.me/' + n + '?text=' + encodeURIComponent(t) : ''; }
+  function linkP(p) { return location.href.split('#')[0] + '#/p/' + encodeURIComponent(p.cod); }
+  function pedido(p) {
+    var l = [p.agotado ? 'Hola, ¿vuelve a estar disponible este producto de CURATA?' : 'Hola, me interesa este producto de CURATA:', '', '• ' + p.nombre + (p.marca ? ' — ' + p.marca : '')];
+    if (S.sel.talla) l.push('• Talla: ' + S.sel.talla); else if (p.tallasL.length) l.push('• Talla: (por definir)');
+    if (S.sel.color) l.push('• Color: ' + S.sel.color);
     if (p.precioN) l.push('• Precio: ' + cop(p.precioN));
-    l.push('• Código: ' + p.cod, '', linkProducto(p));
-    if (p.agotado) l.splice(1, 0, '¿Vuelve a estar disponible?');
+    l.push('• Código: ' + p.cod, '', linkP(p));
     return l.join('\n');
   }
-  function pintarWA() {
-    var general = S.aj.mensaje || 'Hola, vengo del catálogo de CURATA GALERÍA y quiero más información.';
-    var href = waLink(general) || '#';
-    ['#waTop', '#waFlo'].forEach(function (s) { var a = $(s); a.href = href; a.hidden = !waNum() && !S.demo; });
-  }
 
-  /* ---------- pintar ---------- */
   function usar(d) {
-    S.prods = d.prods; S.aj = d.aj || {};
-    var orden = lista(S.aj.departamentos);
-    var vistos = {}; S.deps = [];
-    orden.concat(S.prods.map(function (p) { return p.departamento; })).forEach(function (x) { var k = slug(x); if (k && !vistos[k]) { vistos[k] = 1; S.deps.push(x); } });
-    if (S.aj.frase) $('#frase').textContent = S.aj.frase;
-    $('#demo').hidden = !S.demo;
-    if (S.aj.instagram) { var ig = S.aj.instagram.replace(/^@/, ''); var url = /^https?:/.test(ig) ? ig : 'https://www.instagram.com/' + ig; $('#redes').innerHTML = 'Instagram: <a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(url.replace(/^https?:\/\/(www\.)?instagram\.com\//, '@').replace(/\/$/, '')) + '</a>'; }
-    var marcas = {}; S.prods.forEach(function (p) { if (p.marca) marcas[p.marca] = 1; });
-    $('#fMarca').innerHTML = '<option value="">Todas las marcas</option>' + Object.keys(marcas).sort(function (a, b) { return a.localeCompare(b, 'es'); }).map(function (m) { return '<option>' + esc(m) + '</option>'; }).join('');
-    if (S.marca && !marcas[S.marca]) S.marca = '';
-    $('#fMarca').value = S.marca;
-    $('#fMarca').parentNode.hidden = Object.keys(marcas).length < 2;
-    $('.tools').classList.toggle('sin-marca', Object.keys(marcas).length < 2);
-    pintarWA(); ruta(true);
+    S.prods = d.prods; S.aj = d.aj || {}; S.marcas = d.marcas || {};
+    var vis = {}; S.deps = [];
+    (S.aj.deps || []).concat(S.prods.map(function (p) { return p.departamento; })).forEach(function (x) { var k = slug(x); if (k && !vis[k]) { vis[k] = 1; S.deps.push(x); } });
+    construirMesa();
+    var g = waLink(S.aj.mensaje || 'Hola, vengo del catálogo de CURATA y quiero más información.') || '#';
+    $('#waTop').href = g; $('#waPie').href = g;
+    var ig = S.aj.instagram; $('#igPie').innerHTML = ig ? '<a href="' + esc(igUrl(ig)) + '" target="_blank" rel="noopener">' + esc(igTxt(ig)) + '</a>' : 'Instagram';
+    ruta(true);
   }
 
-  function pintarDeps() {
-    var cuenta = {}; S.prods.forEach(function (p) { var k = slug(p.departamento); cuenta[k] = (cuenta[k] || 0) + 1; });
-    var h = '<button class="dep" type="button" data-dep="" aria-current="' + (!S.dep) + '">Todo<span class="n">' + S.prods.length + '</span></button>';
-    S.deps.forEach(function (d) { var k = slug(d); if (!cuenta[k] && S.dep !== k) return; h += '<button class="dep" type="button" data-dep="' + k + '" aria-current="' + (S.dep === k) + '">' + esc(d) + '<span class="n">' + (cuenta[k] || 0) + '</span></button>'; });
-    $('#deps').innerHTML = h;
-    var act = $('#deps [aria-current="true"]'); if (act && act.scrollIntoView) act.scrollIntoView({ block: 'nearest', inline: 'center' });
+  function opciones() {
+    var base = S.prods.filter(function (p) { return enVista(p); });
+    var ms = {}, ts = {};
+    base.forEach(function (p) { if (p.marca) ms[p.marca] = 1; p.tallasL.forEach(function (t) { ts[t] = 1; }); });
+    var mk = Object.keys(ms).sort(function (a, b) { return a.localeCompare(b, 'es'); }), tk = Object.keys(ts).sort(ordTalla);
+    if (S.marca && !ms[S.marca]) S.marca = ''; if (S.talla && !ts[S.talla]) S.talla = '';
+    $('#fMarca').innerHTML = '<option value="">Marca</option>' + mk.map(function (m) { return '<option' + (m === S.marca ? ' selected' : '') + '>' + esc(m) + '</option>'; }).join('');
+    $('#fTalla').innerHTML = '<option value="">Talla</option>' + tk.map(function (t) { return '<option' + (t === S.talla ? ' selected' : '') + '>' + esc(t) + '</option>'; }).join('');
+    $('#fMarca').parentNode.hidden = mk.length < 2 || S.vista === 'marca';
+    $('#fTalla').parentNode.hidden = !tk.length;
   }
-
+  function enVista(p) {
+    if (S.vista === 'dep') return slug(p.departamento) === S.clave;
+    if (S.vista === 'marca') return slug(p.marca) === S.clave;
+    return true;
+  }
   function filtrados() {
-    var q = norm(S.q), l = S.prods.filter(function (p) {
-      if (S.dep && slug(p.departamento) !== S.dep) return false;
+    var q = norm(S.q);
+    var l = S.prods.filter(function (p) {
+      if (!enVista(p)) return false;
       if (S.marca && p.marca !== S.marca) return false;
+      if (S.talla && p.tallasL.indexOf(S.talla) < 0) return false;
       if (q && norm([p.nombre, p.marca, p.departamento, p.colores, p.cod].join(' ')).indexOf(q) < 0) return false;
       return true;
     });
     var o = S.orden;
-    l.sort(function (a, b) {
+    return l.sort(function (a, b) {
       if (o === 'asc') return (a.precioN || 9e15) - (b.precioN || 9e15);
       if (o === 'desc') return b.precioN - a.precioN;
       if (o === 'new') return b.fila - a.fila;
       return (a.agotado - b.agotado) || (b.dest - a.dest) || (a.fila - b.fila);
     });
-    return l;
+  }
+
+  function nav() {
+    var c = {}; S.prods.forEach(function (p) { var k = slug(p.departamento); c[k] = (c[k] || 0) + 1; });
+    var h = '<a href="#/"' + (S.vista === 'todo' ? ' aria-current="page"' : '') + '>Todo</a>';
+    S.deps.forEach(function (d) { var k = slug(d); if (!c[k] && !(S.vista === 'dep' && S.clave === k)) return; h += '<a href="#/' + k + '"' + (S.vista === 'dep' && S.clave === k ? ' aria-current="page"' : '') + '>' + esc(d) + '</a>'; });
+    h += '<a href="#/marcas"' + (S.vista === 'marcas' || S.vista === 'marca' ? ' aria-current="page"' : '') + '>Marcas</a>';
+    $('#nav').innerHTML = h;
+    var a = $('#nav [aria-current]'); if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
 
   function tarjeta(p) {
     var f = fotosDe(p)[0];
-    return '<button class="card' + (p.agotado ? ' agotado' : '') + '" type="button" data-cod="' + esc(p.cod) + '">' +
-      '<div class="ph">' + (f ? '<img src="' + esc(foto(f, 700)) + '" alt="' + esc(p.nombre) + '" loading="lazy" decoding="async" data-ok="0" onload="this.dataset.ok=1" onerror="this.remove()">' : '') +
-      '<div class="nofoto" aria-hidden="true"><span class="mono" style="display:block"></span>' + (f ? '' : 'Foto pendiente') + '</div>' +
-      (p.agotado ? '<span class="tag out">Agotado</span>' : '') + '</div>' +
-      '<div class="meta">' + (p.marca ? '<p class="marca">' + esc(p.marca) + '</p>' : '') + '<p class="nombre">' + esc(p.nombre) + '</p>' +
-      (p.precioN ? '<p class="precio">' + cop(p.precioN) + '</p>' : '<p class="precio" style="font-weight:500;color:var(--muted)">Consultar precio</p>') + '</div></button>';
+    return '<button class="card" type="button" data-cod="' + esc(p.cod) + '"><div class="ph">' +
+      (f ? '<img src="' + esc(foto(f, 700)) + '" alt="' + esc(p.nombre + (p.marca ? ' de ' + p.marca : '')) + '" loading="lazy" decoding="async" data-ok="0" onload="this.dataset.ok=1" onerror="this.remove()">' : '') + '<span class="pend et">Foto pendiente</span>' +
+      '</div><p class="et">' + esc(etiqueta(p)) + '</p><p class="nom">' + esc(p.nombre) + '</p>' +
+      '<p class="pre">' + (p.agotado ? '<span class="ago">Agotado</span>' : p.precioN ? cop(p.precioN) : '<span class="ago">Pregunta el precio</span>') + '</p></button>';
   }
 
   function pintar() {
-    pintarDeps();
-    var nombreDep = S.dep ? (S.deps.filter(function (d) { return slug(d) === S.dep; })[0] || 'Departamento') : 'Todo el catálogo';
-    $('#titulo').textContent = nombreDep;
-    document.title = (S.dep ? nombreDep + ' · ' : '') + 'CURATA GALERÍA';
+    nav();
+    var t = $('#tools'), cab = '', vistaMarcas = S.vista === 'marcas';
+    $('#mesa').hidden = S.vista !== 'todo';
+    if (S.vista === 'todo') cab = '<span class="et">Para quien ya sabe qué busca</span><h2>Todo el catálogo.</h2>';
+    else if (S.vista === 'dep') cab = '<span class="et">Departamento</span><h2>' + esc((S.deps.filter(function (d) { return slug(d) === S.clave; })[0]) || 'Departamento') + '</h2>';
+    else if (vistaMarcas) cab = '<span class="et">Marcas</span><h2>Quién está en la mesa.</h2><p>Cada marca conserva su foto, su color y su historia. Aquí te decimos de quién es cada cosa y desde dónde viene.</p>';
+    else if (S.vista === 'marca') {
+      var m = S.marcas[S.clave] || {}, n = m.nombre || (S.prods.filter(function (p) { return slug(p.marca) === S.clave; })[0] || {}).marca || 'Marca';
+      var lg = foto(m.logo, 400);
+      cab = (lg ? '<img class="mlogo" src="' + esc(lg) + '" alt="Logo de ' + esc(n) + '">' : '') + '<span class="et">' + esc(['Marca', m.origen].filter(Boolean).join(' · ')) + '</span><h2>' + esc(n) + '</h2>' +
+        (m.descripcion ? '<p>' + esc(m.descripcion) + '</p>' : '') + (m.instagram ? '<a class="ig" href="' + esc(igUrl(m.instagram)) + '" target="_blank" rel="noopener">' + esc(igTxt(m.instagram)) + '</a>' : '');
+    }
+    $('#cab').innerHTML = cab;
+    t.hidden = vistaMarcas;
+    document.title = (S.vista === 'todo' ? '' : ($('#cab h2') ? $('#cab h2').textContent.replace(/\.$/, '') + ' · ' : '')) + 'CURATA GALERÍA';
+    if (vistaMarcas) { $('#cuenta').textContent = ''; pintarMarcas(); return; }
+    opciones();
     var l = filtrados();
-    $('#count').textContent = l.length === 1 ? '1 producto' : l.length + ' productos';
+    $('#cuenta').textContent = l.length === 1 ? '1 producto' : l.length + ' productos';
+    $('#cuerpo').innerHTML = '<div class="grid" id="grid"></div>';
     if (!l.length) {
-      var hay = S.q || S.marca;
-      $('#grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><span class="mono" style="display:block"></span>' +
-        (hay ? 'No encontramos productos con esa búsqueda.<br><button class="btn ghost" type="button" data-limpiar>Ver todo</button>' : 'Pronto agregaremos productos aquí.<br>Escríbenos por WhatsApp si buscas algo en particular.') + '</div>';
+      $('#grid').innerHTML = '<div class="vacio">' + (S.q || S.marca || S.talla ? 'No encontramos productos con esa búsqueda.<br><button class="btn claro" type="button" data-limpiar>Ver todo</button>' : 'Estamos poniendo la mesa. Escríbenos por WhatsApp si buscas algo en particular.') + '</div>';
       return;
     }
     $('#grid').innerHTML = l.map(tarjeta).join('');
   }
 
-  /* ---------- ficha ---------- */
-  function abrir(cod, sinHistoria) {
+  function pintarMarcas() {
+    var c = {}; S.prods.forEach(function (p) { if (!p.marca) return; var k = slug(p.marca); c[k] = c[k] || { n: p.marca, x: 0 }; c[k].x++; });
+    var con = Object.keys(c).sort(function (a, b) { return c[a].n.localeCompare(c[b].n, 'es'); });
+    var h = '<ul class="marcas">' + con.map(function (k) {
+      var m = S.marcas[k] || {};
+      return '<li><a href="#/marca/' + k + '"><span><span class="n">' + esc(m.nombre || c[k].n) + '</span><br><span class="et">' + esc([m.origen, c[k].x + (c[k].x === 1 ? ' producto' : ' productos')].filter(Boolean).join(' · ')) + '</span></span><span aria-hidden="true">→</span></a></li>';
+    }).join('') + '</ul>';
+    var otras = Object.keys(S.marcas).filter(function (k) { return !c[k]; }).sort(function (a, b) { return S.marcas[a].nombre.localeCompare(S.marcas[b].nombre, 'es'); });
+    if (otras.length) h += '<div class="otras"><h3 class="et">También en Distrito Juanambú</h3>' + otras.map(function (k) { var m = S.marcas[k]; return m.instagram ? '<a href="' + esc(igUrl(m.instagram)) + '" target="_blank" rel="noopener">' + esc(m.nombre) + '</a>' : esc(m.nombre); }).join(' · ') + '</div>';
+    $('#cuerpo').innerHTML = h;
+  }
+
+
+  /* ---------- La mesa ---------- */
+  function azar(t) { var h = 2166136261; for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return function (k) { var x = Math.sin(h + k * 999) * 10000; return x - Math.floor(x); }; }
+  function construirMesa() {
+    var M = S.prods.filter(function (p) { return !p.agotado && fotosDe(p).length; }).sort(function (a, b) { return (b.dest - a.dest) || (a.fila - b.fila); }).slice(0, 16);
+    var mesa = $('#mesa'), W = mesa.clientWidth || window.innerWidth, H = mesa.clientHeight || 600, movil = W < 700, T = 0;
+    var lema = esc(S.aj.lema || 'Lo distinto, sobre la misma mesa.');
+    $('#mesaTop').innerHTML = movil ? '<span class="et">La mesa de la semana</span><h1>' + lema + '</h1>' : '';
+    if (movil) T = $('#mesaTop').offsetHeight + 8;
+    $('#pista').style.top = T + 'px'; H -= T;
+    var filas = H >= 420 ? 2 : 1, alto = (H - 60) / filas;
+    var ow = Math.min(alto * 0.68, movil ? W * 0.44 : 290), oh = ow * 1.25;
+    var izq = movil ? 16 : Math.max(16, (W - 1240) / 2 + 16);
+    var x0 = movil ? 16 : izq + 440, paso = ow * (movil ? 1.06 : 1.1);
+    var h = movil ? '' : '<div class="placa"><span class="logo" aria-label="CURATA GALERÍA"><span class="wm"></span><span class="gal" aria-hidden="true"><span>GALERÍA</span></span></span>' +
+      '<span class="et sup">La mesa de la semana</span><h1>' + lema + '</h1><p>' + esc(S.aj.frase || 'Las marcas que reúne Distrito Juanambú, en una sola mesa. Compra desde Cali o desde cualquier parte de Colombia.') + '</p><span class="et firma">by Distrito Juanambú · Cali</span></div>';
+    M.forEach(function (p, i) {
+      var c = filas === 2 ? Math.floor(i / 2) : i, r = filas === 2 ? i % 2 : 0, a = azar(p.cod);
+      var x = Math.max(10, x0 + c * paso + (r ? paso * 0.48 : 0) + (a(1) - 0.5) * ow * 0.16);
+      var y = r * alto + Math.max(8, (alto - oh - 22) / 2 + (a(2) - 0.5) * Math.min(40, alto - oh - 22));
+      var rot = ((a(3) - 0.5) * 9).toFixed(1);
+      h += '<button class="obj" type="button" data-foco="' + esc(p.cod) + '" style="left:' + Math.round(x) + 'px;top:' + Math.round(y) + 'px;width:' + Math.round(ow) + 'px;--r:' + rot + 'deg" aria-label="' + esc(p.nombre + (p.marca ? ' de ' + p.marca : '')) + '"><span class="ft"><img src="' + esc(foto(fotosDe(p)[0], 800)) + '" alt="" draggable="false" onerror="this.closest(\'.obj\').remove()"></span><span class="et">' + esc(etiqueta(p)) + '</span></button>';
+    });
+    var cols = filas === 2 ? Math.ceil(M.length / 2) : M.length;
+    var ancho = M.length ? x0 + (cols - 1) * paso + (filas === 2 && M.length > 1 ? paso * 0.48 : 0) + ow * 1.15 + 24 : W;
+    $('#lienzo').style.width = Math.max(W, Math.round(ancho)) + 'px';
+    $('#lienzo').innerHTML = h;
+    S.mesaAncho = W;
+    $('#guia').textContent = M.length ? (movil ? 'Desliza la mesa · toca un objeto' : 'Arrastra la mesa · haz clic en un objeto') : 'Estamos poniendo la mesa';
+    $('#pista').classList.toggle('mano', !movil);
+  }
+  function abrirFoco(cod, el) {
+    var p = S.prods.filter(function (x) { return x.cod === cod; })[0]; if (!p) return;
+    var img = el.querySelector('img'), r0 = img.getBoundingClientRect(), rot = parseFloat(el.style.getPropertyValue('--r')) || 0;
+    S.foco = { cod: cod, el: el, rot: rot }; S.abierto = p; S.sel = {};
+    if (p.tallasL.length === 1) S.sel.talla = p.tallasL[0];
+    var cs = lista(p.colores); if (cs.length === 1) S.sel.color = cs[0];
+    var f = $('#foco');
+    f.innerHTML = '<button class="x" type="button" data-cerrarfoco aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
+      '<div class="caja"><div class="lugar"><img src="' + esc(img.currentSrc || img.src) + '" alt="' + esc(p.nombre) + '"></div><div class="panel"><p class="et">' + esc(etiqueta(p)) + '</p><h2 id="focoNom">' + esc(p.nombre) + '</h2>' +
+      '<p class="pre">' + (p.precioN ? cop(p.precioN) : 'Pregunta el precio') + '</p>' +
+      (p.tallasL.length ? '<div class="grupo"><h3 class="et">Talla</h3><div class="chips" data-g="talla">' + p.tallasL.map(function (v) { return '<button class="chip" type="button" aria-pressed="' + (S.sel.talla === v) + '" data-v="' + esc(v) + '">' + esc(v) + '</button>'; }).join('') + '</div></div>' : '') +
+      '<div class="acc"><a class="btn" id="pedir" href="#" target="_blank" rel="noopener">' + WA + '<span>Pedir por WhatsApp</span></a></div>' +
+      '<p class="nota">' + (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.</p>' +
+      '<button class="mas" type="button" data-detalle="' + esc(cod) + '">Ver fotos y detalles</button></div></div>';
+    f.hidden = false; document.body.style.overflow = 'hidden'; actualizar();
+    var big = f.querySelector('.lugar img'), r1 = big.getBoundingClientRect(), k = r0.width / r1.width;
+    el.classList.add('fuera');
+    if (big.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) big.animate([{ transformOrigin: '0 0', transform: 'translate(' + (r0.left - r1.left) + 'px,' + (r0.top - r1.top) + 'px) scale(' + k + ') rotate(' + rot + 'deg)' }, { transformOrigin: '0 0', transform: 'none' }], { duration: 480, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    requestAnimationFrame(function () { f.classList.add('on'); });
+    history.pushState({ foco: cod }, '', '#/p/' + encodeURIComponent(cod));
+    document.title = p.nombre + ' · CURATA GALERÍA';
+    setTimeout(function () { var x = f.querySelector('.x'); if (x) x.focus({ preventScroll: true }); }, 60);
+  }
+  function cerrarFoco(hist, rapido) {
+    var F = S.foco; if (!F) return; S.foco = null; S.abierto = null;
+    var f = $('#foco'), big = f.querySelector('.lugar img');
+    function fin() { f.hidden = true; f.innerHTML = ''; F.el.classList.remove('fuera'); document.body.style.overflow = ''; document.title = 'CURATA GALERÍA'; if (!rapido) F.el.focus({ preventScroll: true }); }
+    f.classList.remove('on');
+    if (!rapido && big && big.animate && document.contains(F.el)) {
+      var r0 = F.el.querySelector('img').getBoundingClientRect(), r1 = big.getBoundingClientRect();
+      big.animate([{ transformOrigin: '0 0', transform: 'none' }, { transformOrigin: '0 0', transform: 'translate(' + (r0.left - r1.left) + 'px,' + (r0.top - r1.top) + 'px) scale(' + (r0.width / r1.width) + ') rotate(' + F.rot + 'deg)' }], { duration: 380, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' }).onfinish = fin;
+    } else fin();
+    if (!hist) { if (history.state && history.state.foco) history.back(); else history.replaceState(null, '', '#/'); }
+  }
+  /* Arrastrar la mesa con el mouse */
+  (function () {
+    var pi = $('#pista'), x0 = 0, s0 = 0, on = false;
+    pi.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button) return; on = true; S.drag = false; x0 = e.clientX; s0 = pi.scrollLeft; });
+    window.addEventListener('pointermove', function (e) { if (!on) return; var d = e.clientX - x0; if (Math.abs(d) > 6) { S.drag = true; pi.classList.add('arrastre'); } if (S.drag) pi.scrollLeft = s0 - d; });
+    window.addEventListener('pointerup', function () { if (!on) return; on = false; pi.classList.remove('arrastre'); setTimeout(function () { S.drag = false; }, 0); });
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (Math.abs(window.innerWidth - (S.mesaAncho || 0)) > 40 && !S.foco) construirMesa(); }, 200); });
+  })();
+  /* Ficha */
+  function abrir(cod, sinHist) {
     var p = S.prods.filter(function (x) { return x.cod === cod; })[0];
-    if (!p) { if (S.prods.length) { history.replaceState(null, '', '#/' + (S.dep || '')); } return; }
-    S.abierto = p; S.talla = ''; S.color = '';
-    var fs = fotosDe(p), tallas = lista(p.tallas), colores = lista(p.colores);
-    if (tallas.length === 1) S.talla = tallas[0];
-    if (colores.length === 1) S.color = colores[0];
-    var galeria = fs.length ? fs.map(function (u, i) { return '<div class="ph"><img src="' + esc(foto(u, 1400)) + '" alt="' + esc(p.nombre) + ' — foto ' + (i + 1) + '" ' + (i ? 'loading="lazy"' : '') + ' data-ok="0" onload="this.dataset.ok=1"></div>'; }).join('')
-      : '<div class="ph"><div class="nofoto"><span class="mono" style="display:block;width:56px"></span>Foto pendiente</div></div>';
-    var h = '<div class="hoja-top"><span class="dep-l">' + esc(p.departamento) + '</span><button class="x" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>' +
-      '<div class="hoja-in"><div class="galeria"><div class="fotos" id="fotos">' + galeria + '</div>' +
-      (fs.length > 1 ? '<div class="puntos" id="puntos">' + fs.map(function (_, i) { return '<i' + (i ? '' : ' class="on"') + '></i>'; }).join('') + '</div>' +
-        '<div class="miniaturas" id="minis">' + fs.map(function (u, i) { return '<button type="button" data-i="' + i + '" aria-label="Ver foto ' + (i + 1) + '" aria-current="' + (i === 0) + '"><img src="' + esc(foto(u, 200)) + '" alt=""></button>'; }).join('') + '</div>' : '') +
-      '</div><div class="info">' + (p.marca ? '<p class="marca">' + esc(p.marca) + '</p>' : '') + '<h2 id="fNombre">' + esc(p.nombre) + '</h2>' +
-      '<p class="precio">' + (p.precioN ? cop(p.precioN) : 'Consultar precio') + (p.agotado ? '<span class="estado-out">Agotado</span>' : '') + '</p>' +
-      (tallas.length ? '<div class="grupo"><h3>Talla</h3><div class="chips" data-grupo="talla">' + tallas.map(function (t) { return '<button class="chip" type="button" aria-pressed="' + (S.talla === t) + '" data-v="' + esc(t) + '">' + esc(t) + '</button>'; }).join('') + '</div></div>' : '') +
-      (colores.length ? '<div class="grupo"><h3>Color</h3><div class="chips" data-grupo="color">' + colores.map(function (t) { return '<button class="chip" type="button" aria-pressed="' + (S.color === t) + '" data-v="' + esc(t) + '">' + esc(t) + '</button>'; }).join('') + '</div></div>' : '') +
-      (p.descripcion ? '<div class="grupo"><h3>Detalles</h3><p class="desc">' + esc(p.descripcion) + '</p></div>' : '') +
+    if (!p) { history.replaceState(null, '', '#/'); return; }
+    S.abierto = p; S.sel = {};
+    var fs = fotosDe(p), cs = lista(p.colores), m = marcaDe(p);
+    if (p.tallasL.length === 1) S.sel.talla = p.tallasL[0];
+    if (cs.length === 1) S.sel.color = cs[0];
+    var gal = fs.length ? fs.map(function (u, i) { return '<div class="ph"><img src="' + esc(foto(u, 1400)) + '" alt="' + esc(p.nombre) + ', foto ' + (i + 1) + '"' + (i ? ' loading="lazy"' : '') + ' data-ok="0" onload="this.dataset.ok=1"></div>'; }).join('') : '<div class="ph"><span class="pend et">Foto pendiente</span></div>';
+    function chips(g, arr) { return '<div class="grupo"><h3 class="et">' + (g === 'talla' ? 'Talla' : 'Color') + '</h3><div class="chips" data-g="' + g + '">' + arr.map(function (v) { return '<button class="chip" type="button" aria-pressed="' + (S.sel[g] === v) + '" data-v="' + esc(v) + '">' + esc(v) + '</button>'; }).join('') + '</div></div>'; }
+    $('#hoja').innerHTML = '<div class="hoja-top"><span class="et">' + esc(p.departamento) + '</span><button class="x" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>' +
+      '<div class="hoja-in"><div class="galeria"><div class="fotos" id="fotos">' + gal + '</div>' +
+      (fs.length > 1 ? '<div class="puntos" id="puntos">' + fs.map(function (_, i) { return '<i' + (i ? '' : ' class="on"') + '></i>'; }).join('') + '</div><div class="minis" id="minis">' + fs.map(function (u, i) { return '<button type="button" data-i="' + i + '" aria-label="Foto ' + (i + 1) + '" aria-current="' + (i === 0) + '"><img src="' + esc(foto(u, 200)) + '" alt=""></button>'; }).join('') + '</div>' : '') +
+      '</div><div class="info"><p class="et">' + esc(etiqueta(p)) + '</p><h2 id="fNom">' + esc(p.nombre) + '</h2>' +
+      '<p class="pre">' + (p.precioN ? cop(p.precioN) : 'Pregunta el precio') + (p.agotado ? ' · Agotado' : '') + '</p>' +
+      (p.tallasL.length ? chips('talla', p.tallasL) : '') + (cs.length ? chips('color', cs) : '') +
+      (p.descripcion ? '<div class="grupo"><h3 class="et">Detalles</h3><p class="desc">' + esc(p.descripcion) + '</p></div>' : '') +
+      (p.marca ? '<div class="sobre"><h3 class="et">Sobre ' + esc(p.marca) + '</h3>' + (m && m.descripcion ? '<p>' + esc(m.descripcion) + '</p>' : '') + '<a href="#/marca/' + slug(p.marca) + '" data-irmarca>Ver todo de ' + esc(p.marca) + ' →</a></div>' : '') +
       '<p class="cod">Código ' + esc(p.cod) + '</p>' +
-      '<div class="acciones"><a class="btn wa" id="pedir" href="#" target="_blank" rel="noopener">' + WA_SVG + '<span>' + (p.agotado ? 'Preguntar disponibilidad' : 'Pedir por WhatsApp') + '</span></a>' +
-      '<button class="btn ghost" type="button" id="compartir" aria-label="Compartir producto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></button></div>' +
-      (!waNum() ? '<p class="aviso">' + (S.demo ? 'Vista de ejemplo: el botón se activa con el número de WhatsApp de la hoja.' : 'Falta el número de WhatsApp en la pestaña Ajustes de la hoja.') + '</p>' : '') +
-      '</div></div>';
-    $('#hoja').innerHTML = h; $('#hoja').scrollTop = 0;
-    actualizarPedir();
+      '<div class="acciones"><div class="fila"><a class="btn" id="pedir" href="#" target="_blank" rel="noopener">' + WA + '<span>' + (p.agotado ? 'Preguntar disponibilidad' : 'Pedir por WhatsApp') + '</span></a><button class="btn claro" type="button" id="compartir" aria-label="Compartir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v13M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></button></div>' +
+      '<p class="nota">' + (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.</p></div></div></div>';
+    $('#hoja').scrollTop = 0; actualizar();
     $('#ficha').classList.add('on'); document.body.style.overflow = 'hidden';
     document.title = p.nombre + ' · CURATA GALERÍA';
-    if (!sinHistoria) history.pushState({ p: cod }, '', '#/p/' + encodeURIComponent(cod));
+    if (!sinHist) history.pushState({ p: cod }, '', '#/p/' + encodeURIComponent(cod));
+    var fo = $('#fotos'); if (fs.length > 1) fo.addEventListener('scroll', function () { var i = Math.round(fo.scrollLeft / fo.clientWidth); [].forEach.call(document.querySelectorAll('#puntos i'), function (e, j) { e.classList.toggle('on', i === j); }); [].forEach.call(document.querySelectorAll('#minis button'), function (e, j) { e.setAttribute('aria-current', i === j); }); }, { passive: true });
     setTimeout(function () { var x = $('#hoja .x'); if (x) x.focus({ preventScroll: true }); }, 30);
-    var fotos = $('#fotos'); if (fotos && fs.length > 1) fotos.addEventListener('scroll', function () {
-      var i = Math.round(fotos.scrollLeft / fotos.clientWidth);
-      [].forEach.call(document.querySelectorAll('#puntos i'), function (e, j) { e.classList.toggle('on', i === j); });
-      [].forEach.call(document.querySelectorAll('#minis button'), function (e, j) { e.setAttribute('aria-current', i === j); });
-    }, { passive: true });
   }
-  function actualizarPedir() {
-    var a = $('#pedir'); if (!a || !S.abierto) return;
-    var l = waLink(textoPedido(S.abierto)); a.href = l || '#';
-    a.setAttribute('aria-disabled', l ? 'false' : 'true'); a.style.opacity = l ? '' : '.5';
+  function actualizar() {
+    var a = $('#pedir'), p = S.abierto; if (!a || !p) return;
+    var l = waLink(pedido(p)); a.href = l || '#'; a.setAttribute('aria-disabled', l ? 'false' : 'true');
+    var n = $('.nota'); if (n) n.textContent = (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.';
   }
-  function cerrar(desdeHistoria) {
+  function cerrar(hist) {
     if (!S.abierto) return;
     var cod = S.abierto.cod; S.abierto = null;
-    $('#ficha').classList.remove('on'); document.body.style.overflow = '';
-    pintarTitulo();
-    if (!desdeHistoria) { if (history.state && history.state.p) history.back(); else history.replaceState(null, '', '#/' + (S.dep || '')); }
-    var c = document.querySelector('.card[data-cod="' + (window.CSS && CSS.escape ? CSS.escape(cod) : cod) + '"]'); if (c) c.focus({ preventScroll: true });
+    $('#ficha').classList.remove('on'); $('#hoja').innerHTML = ''; document.body.style.overflow = '';
+    if (!hist) { if (history.state && history.state.p) history.back(); else history.replaceState(null, '', '#/'); }
+    var c = document.querySelector('.card[data-cod="' + cod.replace(/"/g, '') + '"]'); if (c) c.focus({ preventScroll: true });
   }
-  function pintarTitulo() { var n = $('#titulo').textContent; document.title = (S.dep ? n + ' · ' : '') + 'CURATA GALERÍA'; }
 
-  /* ---------- rutas: #/zapatos  ·  #/p/CODIGO ---------- */
-  function ruta(inicial) {
-    var h = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
-    var m = h.match(/^p\/(.+)$/);
-    if (m) {
-      if (inicial) pintar();
-      if (!S.abierto || S.abierto.cod !== m[1]) abrir(m[1], true);
-      return;
-    }
+  /* Rutas: #/  #/zapatos  #/marcas  #/marca/pisos  #/p/CODIGO */
+  function ruta(ini) {
+    var h = decodeURIComponent(location.hash.replace(/^#\/?/, '')), m = h.match(/^p\/(.+)$/);
+    if (S.foco && !(m && m[1] === S.foco.cod)) cerrarFoco(true);
+    if (m && S.foco) return;
+    if (m) { if (ini || !S.vistaLista) { S.vista = S.vista || 'todo'; pintar(); S.vistaLista = 1; } if (!S.abierto || S.abierto.cod !== m[1]) abrir(m[1], true); return; }
     if (S.abierto) cerrar(true);
-    var k = slug(h);
-    S.dep = S.deps.some(function (d) { return slug(d) === k; }) ? k : '';
-    pintar();
+    var mm = h.match(/^marca\/(.+)$/), k = slug(h);
+    if (mm) { S.vista = 'marca'; S.clave = slug(mm[1]); }
+    else if (k === 'marcas') { S.vista = 'marcas'; S.clave = ''; }
+    else if (k && S.deps.some(function (d) { return slug(d) === k; })) { S.vista = 'dep'; S.clave = k; }
+    else { S.vista = 'todo'; S.clave = ''; }
+    S.vistaLista = 1; pintar();
+    if (!ini) { var c = $('#cab'); if (window.scrollY > c.offsetTop) window.scrollTo(0, Math.max(0, c.offsetTop - 110)); }
   }
 
-  /* ---------- eventos ---------- */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-dep],[data-cod],[data-cerrar],[data-limpiar],.chip,#compartir,#minis button,#pedir');
-    if (!t) return;
-    if (t.hasAttribute('data-dep')) {
-      var d = t.getAttribute('data-dep'); history.pushState(null, '', '#/' + d); S.dep = d; pintar();
-      var top = document.querySelector('.intro'); if (window.scrollY > top.offsetTop) window.scrollTo({ top: top.offsetTop - 10, behavior: 'smooth' });
-    } else if (t.hasAttribute('data-cod')) abrir(t.getAttribute('data-cod'));
+    var t = e.target.closest('[data-foco],[data-cerrarfoco],[data-detalle],[data-mover],[data-ircatalogo],[data-cod],[data-cerrar],[data-limpiar],.chip,#compartir,#minis button,#pedir,[data-irmarca]');
+    if (!t) { if (S.foco && e.target === $('#foco') || (S.foco && e.target.classList && e.target.classList.contains('caja'))) cerrarFoco(); return; }
+    if (t.hasAttribute('data-foco')) { if (!S.drag) abrirFoco(t.getAttribute('data-foco'), t); }
+    else if (t.hasAttribute('data-cerrarfoco')) cerrarFoco();
+    else if (t.hasAttribute('data-detalle')) { var cd = t.getAttribute('data-detalle'); cerrarFoco(true, true); history.replaceState(null, '', '#/'); abrir(cd); }
+    else if (t.hasAttribute('data-mover')) { var pi = $('#pista'); pi.scrollBy({ left: Number(t.getAttribute('data-mover')) * pi.clientWidth * 0.6, behavior: 'smooth' }); }
+    else if (t.hasAttribute('data-ircatalogo')) { window.scrollTo({ top: $('#cab').getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }
+    else if (t.hasAttribute('data-cod')) abrir(t.getAttribute('data-cod'));
     else if (t.hasAttribute('data-cerrar')) cerrar();
-    else if (t.hasAttribute('data-limpiar')) { S.q = ''; S.marca = ''; $('#q').value = ''; $('#fMarca').value = ''; pintar(); }
-    else if (t.classList.contains('chip')) {
-      var g = t.parentNode.getAttribute('data-grupo'), v = t.getAttribute('data-v'), on = S[g] !== v;
-      S[g] = on ? v : '';
-      [].forEach.call(t.parentNode.children, function (c) { c.setAttribute('aria-pressed', on && c === t); });
-      actualizarPedir();
-    } else if (t.id === 'compartir') {
-      var p = S.abierto, url = linkProducto(p);
-      if (navigator.share) navigator.share({ title: p.nombre, text: p.nombre + (p.marca ? ' — ' + p.marca : '') + ' en CURATA GALERÍA', url: url }).catch(function () {});
-      else if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { toast('Enlace copiado'); }, function () { toast(url); });
-      else toast(url);
-    } else if (t.id === 'pedir') {
-      if (t.getAttribute('aria-disabled') === 'true') { e.preventDefault(); toast(S.demo ? 'Vista de ejemplo: falta el número de WhatsApp' : 'Falta el número de WhatsApp'); }
-    } else if (t.closest('#minis')) {
-      var f = $('#fotos'); f.scrollTo({ left: f.clientWidth * Number(t.getAttribute('data-i')), behavior: 'smooth' });
-    }
+    else if (t.hasAttribute('data-irmarca')) { e.preventDefault(); var href = t.getAttribute('href'); cerrar(true); history.replaceState(null, '', href); ruta(false); }
+    else if (t.hasAttribute('data-limpiar')) { S.q = S.marca = S.talla = ''; $('#q').value = ''; pintar(); }
+    else if (t.classList.contains('chip')) { var g = t.parentNode.getAttribute('data-g'), v = t.getAttribute('data-v'), on = S.sel[g] !== v; S.sel[g] = on ? v : ''; [].forEach.call(t.parentNode.children, function (c) { c.setAttribute('aria-pressed', on && c === t); }); actualizar(); }
+    else if (t.id === 'compartir') { var p = S.abierto, u = linkP(p); if (navigator.share) navigator.share({ title: p.nombre, text: p.nombre + (p.marca ? ' de ' + p.marca : '') + ' · CURATA', url: u }).catch(function () {}); else if (navigator.clipboard) navigator.clipboard.writeText(u).then(function () { toast('Enlace copiado'); }); }
+    else if (t.id === 'pedir') { if (t.getAttribute('aria-disabled') === 'true') { e.preventDefault(); toast('Falta el número de WhatsApp en la hoja'); } }
+    else if (t.closest('#minis')) { var f = $('#fotos'); f.scrollTo({ left: f.clientWidth * Number(t.getAttribute('data-i')), behavior: 'smooth' }); }
   });
-  ['#waTop', '#waFlo'].forEach(function (s) { $(s).addEventListener('click', function (e) { if (!waNum()) { e.preventDefault(); toast(S.demo ? 'Vista de ejemplo: falta el número de WhatsApp' : 'Falta el número de WhatsApp'); } }); });
   var tq; $('#q').addEventListener('input', function (e) { clearTimeout(tq); tq = setTimeout(function () { S.q = e.target.value; pintar(); }, 120); });
   $('#fMarca').addEventListener('change', function (e) { S.marca = e.target.value; pintar(); });
+  $('#fTalla').addEventListener('change', function (e) { S.talla = e.target.value; pintar(); });
   $('#fOrden').addEventListener('change', function (e) { S.orden = e.target.value; pintar(); });
-  window.addEventListener('popstate', function () { ruta(false); });
   window.addEventListener('hashchange', function () { ruta(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
-  window.addEventListener('scroll', function () { $('#top').classList.toggle('scrolled', window.scrollY > 8); }, { passive: true });
-
-  /* esqueleto mientras carga */
-  $('#grid').innerHTML = new Array(8).join('<div class="card skel"><div class="ph"></div><div class="l"></div><div class="l b"></div></div>');
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (S.foco) cerrarFoco(); else cerrar(); } });
+  window.addEventListener('scroll', function () { $('#top').classList.toggle('scrolled', window.scrollY > 4); }, { passive: true });
+  $('#grid').innerHTML = new Array(9).join('<div class="card skel"><div class="ph"></div></div>');
   cargar();
 })();
 </script>
