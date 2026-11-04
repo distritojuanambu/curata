@@ -360,7 +360,8 @@ var SHEET_ID = '1XghjIwfRyXiBwEqABOxwMHMXqg0XCbx5xaNPna388Nw';
   function entrada() {
     var col = S.marcas.filter(function (m) { return !m.int; }), int = S.marcas.filter(function (m) { return m.int; });
     var heroes = S.marcas.filter(function (m) { return m.fotosL.length && m.sala !== 'Café'; });
-    var h1 = heroes.slice(0, 7);
+    var h1 = []; SALAS.forEach(function (s) { var m = heroes.filter(function (x) { return x.sala === s; })[0]; if (m) h1.push(m); });
+    heroes.forEach(function (m) { if (h1.length < 7 && h1.indexOf(m) < 0) h1.push(m); });
     var dest = S.prods.filter(function (p) { return !p.agotado; }).sort(function (a, b) { return (b.destN - a.destN) || (a.fila - b.fila); }).slice(0, 8);
     var h = '<div class="w"><section class="hero">' +
       '<div class="escena"><div class="ph" id="esc">' + h1.map(function (m, i) { return img(m.fotosL[0], 1200, 'Sala de ' + m.nombre, ' data-i="' + i + '"' + (i ? ' style="opacity:0"' : '')); }).join('') + '</div>' +
