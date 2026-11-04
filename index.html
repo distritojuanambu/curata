@@ -396,7 +396,7 @@ var HOJA_AJUSTES = 'Ajustes';
   function pintarDeps() {
     var cuenta = {}; S.prods.forEach(function (p) { var k = slug(p.departamento); cuenta[k] = (cuenta[k] || 0) + 1; });
     var h = '<button class="dep" type="button" data-dep="" aria-current="' + (!S.dep) + '">Todo<span class="n">' + S.prods.length + '</span></button>';
-    S.deps.forEach(function (d) { var k = slug(d); h += '<button class="dep" type="button" data-dep="' + k + '" aria-current="' + (S.dep === k) + '">' + esc(d) + '<span class="n">' + (cuenta[k] || 0) + '</span></button>'; });
+    S.deps.forEach(function (d) { var k = slug(d); if (!cuenta[k] && S.dep !== k) return; h += '<button class="dep" type="button" data-dep="' + k + '" aria-current="' + (S.dep === k) + '">' + esc(d) + '<span class="n">' + (cuenta[k] || 0) + '</span></button>'; });
     $('#deps').innerHTML = h;
     var act = $('#deps [aria-current="true"]'); if (act && act.scrollIntoView) act.scrollIntoView({ block: 'nearest', inline: 'center' });
   }
