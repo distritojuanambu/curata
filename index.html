@@ -4,296 +4,277 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CURATA GALERÍA · by Distrito Juanambú</title>
-<meta name="description" content="Las marcas que reúne Distrito Juanambú, en una sola mesa. Compra desde Cali o desde cualquier parte de Colombia.">
+<meta name="description" content="Un recorrido por las marcas de Distrito Juanambú, sala por sala. Conoce quién hace cada pieza y pídela por WhatsApp. Envíos a toda Colombia.">
 <meta name="theme-color" content="#FDF7F1">
 <meta property="og:title" content="CURATA GALERÍA · by Distrito Juanambú">
-<meta property="og:description" content="Lo distinto, sobre la misma mesa. Las marcas que reúne Distrito Juanambú, con envíos a toda Colombia.">
+<meta property="og:description" content="Un recorrido por las marcas de Distrito Juanambú, sala por sala. Envíos a toda Colombia.">
 <meta property="og:image" content="https://distritojuanambu.github.io/curata/og.jpg">
-<meta property="og:url" content="https://distritojuanambu.github.io/curata/">
 <meta property="og:type" content="website">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/curata/favicon-32.png">
+<link rel="apple-touch-icon" href="/curata/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-/* Manual de marca "La mesa": marfil, café y mesa; una sola letra (DM Sans); el logo es la única serifa */
-:root{--marfil:#FDF7F1;--cafe:#522A0A;--mesa:#EADFD0;--suave:rgba(82,42,10,.72);--linea:rgba(82,42,10,.16);--gut:16px;--f:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
+/* Manual "La mesa": marfil, café y mesa. Una sola letra (DM Sans). El logo es la única serifa. Sin sombras, marcos ni degradados. */
+:root{--m:#FDF7F1;--c:#522A0A;--t:#EADFD0;--s:rgba(82,42,10,.7);--l:rgba(82,42,10,.15);--g:16px;--f:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--marfil);color:var(--cafe);font:400 16px/1.5 var(--f);-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+body{margin:0;background:var(--m);color:var(--c);font:400 16px/1.6 var(--f);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-button,input,select{font:inherit;color:inherit}
+button,select{font:inherit;color:inherit}
 button{cursor:pointer}
 a{color:inherit}
 [hidden]{display:none!important}
-:focus-visible{outline:2px solid var(--cafe);outline-offset:2px}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.et{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.35}
-/* Logo: CURATA (dibujo original) como máscara + GALERÍA en DM Sans con líneas, como en el manual */
-.wm{display:block;background:currentColor;-webkit-mask:url(wordmark.png) center/contain no-repeat;mask:url(wordmark.png) center/contain no-repeat;aspect-ratio:640/139}
-.logo{--w:240px;width:var(--w);display:block}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+.w{max-width:1280px;margin:0 auto;padding:0 var(--g)}
+.et{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.4}
+.su{color:var(--s)}
+.wm{display:block;background:currentColor;-webkit-mask:url(/curata/wordmark.png) center/contain no-repeat;mask:url(/curata/wordmark.png) center/contain no-repeat;aspect-ratio:640/139}
+.logo{--w:260px;width:var(--w);display:block}
 .logo .gal{display:flex;align-items:center;justify-content:center;gap:calc(var(--w)*.035);margin-top:calc(var(--w)*.05);font-size:calc(var(--w)*.044);font-weight:500;letter-spacing:.62em;line-height:1}
-.logo .gal::before,.logo .gal::after{content:"";width:calc(var(--w)*.105);height:max(1px,calc(var(--w)*.0033));background:currentColor}
+.logo .gal::before,.logo .gal::after{content:"";width:calc(var(--w)*.105);height:1px;background:currentColor}
 .logo .gal span{margin-right:-.62em}
-/* Encabezado */
-.top{position:sticky;top:0;z-index:20;background:var(--marfil);border-bottom:1px solid transparent}
-.top.scrolled{border-bottom-color:var(--linea)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:56px}
-.bar .wm{height:20px}
-.wa-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;text-decoration:none;padding:8px 0}
-.wa-link svg{width:18px;height:18px}
-.nav{display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;padding:2px 0 0}
-.nav::-webkit-scrollbar{display:none}
-.nav a{flex:0 0 auto;padding:10px 0 9px;text-decoration:none;border-bottom:2px solid transparent;color:var(--suave)}
-.nav a[aria-current="page"]{color:var(--cafe);border-bottom-color:var(--cafe)}
-/* Portada: el lugar, la firma y la frase */
-/* La mesa: el gesto de CURATA. La mesa vista desde arriba; tocas un objeto y se acerca */
-.mesa{position:relative;background:var(--mesa);height:calc(100svh - 96px);min-height:520px;max-height:880px;overflow:hidden}
-.pista{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain}
-.pista::-webkit-scrollbar{display:none}
-.pista.mano{cursor:grab}.pista.arrastre{cursor:grabbing}
-.lienzo{position:relative;height:100%}
-.mesa-top{position:absolute;top:0;left:0;right:0;padding:20px var(--gut) 0;z-index:1;pointer-events:none}
-.mesa-top:empty{display:none}
-.mesa-top h1{font-size:26px;line-height:1.12;font-weight:400;margin:6px 0 0;letter-spacing:-.01em;max-width:16ch}
-.mesa-top .et{color:var(--suave)}
-.placa{position:absolute;left:var(--gut);top:0;bottom:56px;width:min(320px,74vw);display:flex;flex-direction:column;justify-content:center}
-.placa .logo{--w:min(230px,62vw)}
-.placa .et.sup{margin-top:28px;color:var(--suave)}
-.placa h1{font-size:30px;line-height:1.1;font-weight:400;margin:8px 0 10px;letter-spacing:-.01em}
-.placa p{margin:0;color:var(--suave);font-size:15px;max-width:34ch}
-.placa .firma{margin-top:18px}
-.obj{position:absolute;border:0;padding:0;background:none;text-align:left;-webkit-tap-highlight-color:transparent}
-.obj .ft{display:block;transform:rotate(var(--r));transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.obj img,.foco .lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 7%,#000 93%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 7%,#000 93%,transparent);mask-composite:intersect}
-.obj img{mix-blend-mode:multiply}
-.obj .et{display:block;margin:4px 0 0 7%;font-size:11px}
-.obj:hover .ft{transform:rotate(var(--r)) scale(1.035)}
-.obj.fuera{visibility:hidden}
-.mesa-pie{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px var(--gut) calc(14px + env(safe-area-inset-bottom));pointer-events:none}
-.mesa-pie>*{pointer-events:auto}
-.mesa-pie .ir{border:0;background:none;padding:6px 0;font-weight:500;font-size:14px}
-.flechas{display:none;gap:8px}
-.flechas button{width:44px;height:44px;border:1px solid var(--cafe);background:transparent;border-radius:50%;font-size:18px;line-height:1}
-.guia{color:var(--suave)}
-/* Foco: el objeto elegido se acerca y el resto de la mesa queda detrás */
-.foco{position:fixed;inset:0;z-index:35;overflow-y:auto;overscroll-behavior:contain;background:rgba(234,223,208,.62);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);opacity:0;transition:opacity .35s ease}
-.foco.on{opacity:1}
-.foco .x{position:fixed;top:8px;right:6px;z-index:3}
-.foco .caja{padding:60px var(--gut) 40px}
-.foco .lugar{position:relative;z-index:2;width:min(76vw,400px,calc((100svh - 330px)*.8));min-width:200px;margin:0 auto}
-.foco .panel{max-width:420px;margin:0 auto;padding-top:16px;opacity:0;transform:translateY(10px);transition:opacity .3s ease .18s,transform .3s ease .18s}
-.foco.on .panel{opacity:1;transform:none}
-.foco .panel h2{font-size:26px;line-height:1.15;font-weight:400;margin:4px 0 6px}
-.foco .panel .pre{font-size:17px;font-weight:500;margin:0}
-.foco .acc{display:flex;gap:8px;margin-top:18px}
-.foco .acc .btn{flex:1}
-.foco .mas{display:inline-block;margin-top:14px;border:0;background:none;padding:6px 0;font-weight:500;text-decoration:underline;text-underline-offset:3px}
-/* Títulos y herramientas */
-.cab{padding:32px 0 8px}
-.cab h2{font-size:30px;line-height:1.12;font-weight:400;margin:6px 0 8px;letter-spacing:-.01em}
-.cab p{margin:0;color:var(--suave);max-width:60ch}
-.cab .ig{display:inline-block;margin-top:10px;font-weight:500}
-.cab .mlogo{max-height:56px;max-width:160px;object-fit:contain;margin:0 0 14px}
-.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px;padding:18px 0 4px}
-.buscar{grid-column:1/-1;position:relative}
-.buscar input{width:100%;height:44px;padding:0 0 0 30px;border:0;border-bottom:1px solid var(--cafe);background:transparent;font-size:16px;border-radius:0}
-.buscar input::placeholder{color:var(--suave)}
-.buscar svg{position:absolute;left:0;top:50%;transform:translateY(-50%);width:18px;height:18px}
-.sel select{appearance:none;-webkit-appearance:none;width:100%;height:40px;padding:0 26px 0 0;border:0;border-bottom:1px solid var(--linea);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23522A0A' stroke-width='1.5'/%3E%3C/svg%3E") right 4px center/11px no-repeat;font-size:14px;border-radius:0}
-.cuenta{font-size:13px;color:var(--suave);margin:12px 0 16px}
-/* Grilla: la mesa, la etiqueta, el orden */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 12px}
-.card{display:flex;flex-direction:column;align-self:start;text-align:left;border:0;padding:0;background:none}
-.ph{position:relative;aspect-ratio:4/5;background:var(--mesa);overflow:hidden}
-.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:opacity .3s}
-.ph img[data-ok="0"]{opacity:0}
-.ph .pend{position:absolute;inset:0;display:grid;place-items:center;color:var(--suave)}
-.ph img[data-ok="1"]+.pend{display:none}
-.card .et{margin:12px 0 4px}
-.card .nom{margin:0;font-size:16px;line-height:1.3}
-.card .pre{margin:4px 0 0;font-size:15px;font-weight:500}
-.card .ago{color:var(--suave);font-weight:400}
-.vacio{grid-column:1/-1;padding:40px 0;color:var(--suave);max-width:44ch}
-.vacio button{margin-top:16px}
-.skel .ph{animation:p 1.4s ease-in-out infinite}
-@keyframes p{50%{opacity:.6}}
-/* Marcas */
-.marcas{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--linea)}
-.marcas li{border-bottom:1px solid var(--linea)}
-.marcas a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;text-decoration:none}
-.marcas .n{font-size:18px;font-weight:500}
-.marcas .et{color:var(--suave);margin-top:2px}
-.otras{margin:40px 0 0;color:var(--suave);font-size:15px;line-height:1.9}
-.otras h3{margin:0 0 6px;color:var(--cafe)}
-.otras a{text-decoration:none}
-.otras a:hover{text-decoration:underline}
-/* Botones */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 22px;border:1px solid var(--cafe);background:var(--cafe);color:var(--marfil);font-weight:500;font-size:16px;text-decoration:none;border-radius:2px}
-.btn svg{width:20px;height:20px}
-.btn.claro{background:transparent;color:var(--cafe)}
-.btn.inv{background:var(--marfil);color:var(--cafe);border-color:var(--marfil)}
-/* Ficha de producto */
-.ficha{position:fixed;inset:0;z-index:40;display:none}
-.ficha.on{display:block}
-.velo{position:absolute;inset:0;background:rgba(82,42,10,.42)}
-.hoja{position:absolute;inset:0;background:var(--marfil);overflow-y:auto;overscroll-behavior:contain;animation:sube .25s ease-out}
-@keyframes sube{from{transform:translateY(16px);opacity:0}}
-.hoja-top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 6px 0 var(--gut);background:var(--marfil)}
-.x{width:44px;height:44px;border:0;background:none;display:grid;place-items:center}
-.x svg{width:20px;height:20px}
-.fotos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border:1px solid var(--c);background:var(--c);color:var(--m);font-weight:500;font-size:15px;text-decoration:none;border-radius:2px}
+.btn.cl{background:transparent;color:var(--c)}
+.btn svg{width:19px;height:19px}
+.lk{font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.ph{position:relative;background:var(--t);overflow:hidden;aspect-ratio:4/5}
+.ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.ph img.ok{opacity:1}
+/* Franja y encabezado */
+.franja{background:var(--c);color:var(--m);text-align:center;padding:8px var(--g);font-size:12px;letter-spacing:.04em}
+.top{position:sticky;top:0;z-index:30;background:var(--m);border-bottom:1px solid var(--l)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.bar>a .wm{width:104px}
+.menu{display:none;gap:28px;align-items:center}
+.menu a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.menu a[aria-current]{border-bottom-color:var(--c)}
+.ico{display:inline-flex;align-items:center;gap:8px;border:0;background:none;padding:10px 0;text-decoration:none;font-weight:500;font-size:14px}
+.ico svg{width:20px;height:20px}
+.prog{height:2px;background:var(--l)}
+.prog i{display:block;height:100%;width:0;background:var(--c);transition:width .5s ease}
+/* Menú móvil = plano */
+.capa{position:fixed;inset:0;z-index:50;background:var(--m);overflow-y:auto;padding:0 0 40px}
+.capa .bar{padding:0 var(--g)}
+/* Entrada */
+.hero{display:grid;gap:28px;padding:20px 0 48px}
+.escena{position:relative}
+.escena .ph{aspect-ratio:4/5}
+.escena .ph img{position:absolute;inset:0;transition:opacity 1.4s ease}
+.cartela{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:12px;border-bottom:1px solid var(--l);padding-bottom:12px;text-decoration:none}
+.hero h1{font-size:40px;line-height:1.05;font-weight:400;letter-spacing:-.025em;margin:14px 0 16px}
+.hero p{margin:0 0 26px;color:var(--s);max-width:44ch;font-size:17px}
+.acc{display:flex;flex-wrap:wrap;gap:10px}
+.sec{padding:56px 0;border-top:1px solid var(--l)}
+.sec>h2,.cab h2{font-size:32px;line-height:1.1;font-weight:400;letter-spacing:-.02em;margin:8px 0 10px}
+.sec>p.in,.cab p{margin:0 0 30px;color:var(--s);max-width:58ch}
+.pasos{list-style:none;margin:0;padding:0;display:grid;gap:26px;counter-reset:p}
+.pasos li{counter-increment:p;border-top:1px solid var(--c);padding-top:14px}
+.pasos li::before{content:"0" counter(p);display:block;font-size:13px;font-weight:700;letter-spacing:.08em;margin-bottom:10px}
+.pasos b{display:block;font-size:20px;font-weight:400;margin-bottom:6px}
+.pasos span{color:var(--s)}
+.alas{display:grid;gap:18px}
+.ala{display:block;text-decoration:none;background:var(--t);padding:18px}
+.ala .mos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:6px;aspect-ratio:5/4;margin-bottom:16px}
+.ala .mos .ph{aspect-ratio:auto}
+.ala .mos .ph:first-child{grid-row:1/3}
+.ala h3{font-size:28px;font-weight:400;letter-spacing:-.02em;margin:4px 0 4px}
+.ala p{margin:0;color:var(--s)}
+/* Plano */
+.plano>div+div{margin-top:48px}
+.gr{break-inside:avoid}
+.plano h3{font-size:22px;font-weight:400;margin:0 0 4px}
+.plano .gr{margin-top:22px}
+.plano .gr>span{display:block;margin-bottom:6px}
+.plano ol{list-style:none;margin:0;padding:0}
+.plano li a{display:grid;grid-template-columns:34px 1fr auto;align-items:baseline;gap:8px;padding:11px 0;border-bottom:1px solid var(--l);text-decoration:none}
+.plano li a:hover .nm,.plano li a:focus-visible .nm{text-decoration:underline;text-underline-offset:4px}
+.plano .n{font-size:12px;font-weight:700;color:var(--s);font-variant-numeric:tabular-nums}
+.plano .nm{font-size:17px}
+.plano .ci{font-size:13px;color:var(--s)}
+.vista{display:none}
+/* Sala */
+.sala{padding-top:22px;padding-bottom:10px}
+.sala-in{display:grid;gap:26px}
+.ficha h1{font-size:44px;line-height:1.02;font-weight:400;letter-spacing:-.03em;margin:12px 0 8px}
+.ficha .meta{color:var(--s);margin:0 0 24px}
+.ficha h2{margin:26px 0 8px}
+.ficha p{margin:0;max-width:56ch}
+.mirar{list-style:none;margin:0;padding:0;counter-reset:m}
+.mirar li{counter-increment:m;display:grid;grid-template-columns:30px 1fr;padding:12px 0;border-top:1px solid var(--l)}
+.mirar li::before{content:counter(m);font-size:12px;font-weight:700;padding-top:3px}
+.ficha .acc{margin-top:28px}
+.por{margin:0 calc(var(--g)*-1)}
+.fotos{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--g)*-1);padding:0 var(--g)}
 .fotos::-webkit-scrollbar{display:none}
-.fotos .ph{flex:0 0 100%;scroll-snap-align:start}
-.puntos{display:flex;justify-content:center;gap:6px;padding:10px 0 0}
-.puntos i{width:6px;height:6px;border-radius:50%;background:var(--linea)}
-.puntos i.on{background:var(--cafe)}
-.minis{display:none}
-.info{padding:16px var(--gut) 132px}
-.info h2{font-size:28px;line-height:1.15;font-weight:400;margin:6px 0 8px;letter-spacing:-.01em}
-.info .pre{font-size:18px;font-weight:500;margin:0}
-.grupo{margin:24px 0 0}
-.grupo h3{margin:0 0 10px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{min-width:48px;height:44px;padding:0 14px;border:1px solid var(--linea);background:transparent;font-size:15px;border-radius:2px}
-.chip[aria-pressed="true"]{background:var(--cafe);border-color:var(--cafe);color:var(--marfil)}
-.desc{white-space:pre-line;margin:0}
-.sobre{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--linea)}
-.sobre p{margin:0 0 8px;color:var(--suave)}
-.sobre a{font-weight:500}
-.cod{margin:18px 0 0;font-size:13px;color:var(--suave)}
-.acciones{position:fixed;left:0;right:0;bottom:0;z-index:3;padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));background:var(--marfil);border-top:1px solid var(--linea)}
-.acciones .fila{display:flex;gap:8px}
-.acciones .btn{flex:1}
-.acciones .btn.claro{flex:0 0 52px;padding:0}
-.nota{margin:8px 0 0;font-size:13px;color:var(--suave);text-align:center}
-.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:var(--cafe);color:var(--marfil);padding:10px 16px;font-size:14px;z-index:60;opacity:0;transition:opacity .2s;pointer-events:none}
+.fotos .ph{flex:0 0 72%;scroll-snap-align:start}
+.fotos:empty{display:none}
+.franja .dir{display:none}
+.sigue{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--l);margin-top:40px}
+.sigue a{display:flex;flex-direction:column;gap:6px;padding:22px 0;text-decoration:none}
+.sigue a+a{text-align:right;align-items:flex-end;border-left:1px solid var(--l);padding-left:16px}
+.sigue a:first-child{padding-right:16px}
+.sigue b{font-size:20px;font-weight:400;line-height:1.2}
+/* Piezas */
+.cab{padding:30px 0 6px}
+.filtros{display:flex;gap:8px;margin:14px calc(var(--g)*-1) 4px;padding:0 var(--g);overflow-x:auto;scrollbar-width:none}.filtros::-webkit-scrollbar{display:none}
+.chip{min-height:40px;padding:0 16px;border:1px solid var(--l);background:transparent;border-radius:40px;font-size:14px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:var(--m)}
+.sels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:8px 0 18px}
+.sels select{appearance:none;-webkit-appearance:none;width:100%;height:42px;padding:0 24px 0 0;border:0;border-bottom:1px solid var(--l);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23522A0A' stroke-width='1.4'/%3E%3C/svg%3E") right 2px center/11px no-repeat;font-size:14px;border-radius:0}
+.cuenta{font-size:13px;color:var(--s);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 12px}
+.card{display:flex;flex-direction:column;text-align:left;border:0;padding:0;background:none;align-self:start}
+.card .ph img+img{position:absolute;inset:0}
+.card .ph img.dos{opacity:0!important}
+.card:hover .ph img.dos{opacity:1!important}
+.card .et{margin:12px 0 3px}
+.card .nm{font-size:15.5px;line-height:1.3}
+.card .pr{font-weight:500;margin-top:4px}
+.card .tl{font-size:12.5px;color:var(--s);margin-top:3px}
+.vacio{grid-column:1/-1;padding:28px 0;color:var(--s);max-width:52ch}
+/* Ficha de producto */
+.modal{position:fixed;inset:0;z-index:60;background:var(--m);overflow-y:auto;overscroll-behavior:contain}
+.modal .x{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 6px 0 var(--g);background:var(--m)}
+.x button{width:44px;height:44px;border:0;background:none;display:grid;place-items:center}
+.x svg{width:20px;height:20px}
+.pz{display:grid;gap:20px;padding-bottom:110px}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:6px}
+.gal::-webkit-scrollbar{display:none}
+.gal .ph{flex:0 0 88%;scroll-snap-align:start}
+.gal .ph:only-child{flex-basis:100%}
+.inf{padding:0 var(--g)}
+.inf h2{font-size:30px;line-height:1.1;font-weight:400;letter-spacing:-.02em;margin:8px 0 6px}
+.inf .pr{font-size:20px;font-weight:500;margin:0}
+.grupo{margin-top:22px}
+.grupo>.et{display:block;margin-bottom:10px}
+.ops{display:flex;flex-wrap:wrap;gap:8px}
+.ops .chip{border-radius:2px;min-width:48px}
+details{border-top:1px solid var(--l);padding:14px 0}
+details:last-of-type{border-bottom:1px solid var(--l)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:18px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--s);white-space:pre-line}
+.pedir{position:fixed;left:0;right:0;bottom:0;z-index:3;padding:12px var(--g) calc(12px + env(safe-area-inset-bottom));background:var(--m);border-top:1px solid var(--l)}
+.pedir .btn{width:100%}
+.pedir p{margin:8px 0 0;font-size:12.5px;color:var(--s);text-align:center}
+/* Visítanos y pie */
+.visita{display:grid;gap:26px}
+.visita h3{margin:0 0 6px}
+.visita p{margin:0;color:var(--s)}
+.pie{margin-top:60px;background:var(--c);color:var(--m);padding:46px 0 calc(42px + env(safe-area-inset-bottom))}
+.pie .logo{--w:210px}
+.pie p{margin:18px 0 0;opacity:.85;max-width:52ch}
+.pie a{color:var(--m)}
+.pie .et{margin-top:26px;display:block}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--c);color:var(--m);padding:10px 16px;font-size:14px;z-index:70;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.on{opacity:1}
-/* Cierre */
-.pie{margin-top:72px;background:var(--cafe);color:var(--marfil);padding:44px 0 calc(40px + env(safe-area-inset-bottom))}
-.pie .logo{--w:220px;color:var(--marfil)}
-.pie .frase{font-size:22px;line-height:1.2;margin:24px 0 8px}
-.pie .cols{display:grid;gap:18px;margin-top:28px;font-size:15px}
-.pie .cols p{margin:4px 0 0;opacity:.86}
-.pie a{color:var(--marfil)}
-.pie .legal{margin-top:32px;font-size:13px;opacity:.7}
-@media (min-width:700px){
-  .grid{grid-template-columns:repeat(3,1fr);gap:40px 20px}
-  .placa h1{font-size:40px}
-  .placa{width:360px;left:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)))}
-  .placa .logo{--w:280px}
-  .flechas{display:flex}
-  .mesa-pie{padding-left:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)));padding-right:max(var(--gut),calc((100vw - 1240px)/2 + var(--gut)))}
-  .tools{grid-template-columns:1fr 150px 150px 150px;align-items:end}
-  .buscar{grid-column:auto}
-  .cab h2{font-size:44px}
-  .pie .cols{grid-template-columns:repeat(3,1fr)}
+.ap{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.ap.in{opacity:1;transform:none}
+@media (min-width:760px){
+  :root{--g:28px}
+  .filtros{flex-wrap:wrap;overflow:visible;margin:18px 0 6px;padding:0}
+  .franja .dir{display:inline}
+  .hero{grid-template-columns:1fr 1.05fr;align-items:center;gap:56px;padding:36px 0 70px}
+  .hero .txt{order:-1}
+  .hero h1{font-size:60px}
+  .sec>h2,.cab h2{font-size:44px}
+  .pasos{grid-template-columns:repeat(3,1fr);gap:28px}
+  .alas{grid-template-columns:1fr 1fr}
+  .gru{columns:2;column-gap:48px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px}
+  .sels{grid-template-columns:repeat(3,200px)}
+  .visita{grid-template-columns:repeat(3,1fr)}
 }
-@media (min-width:1024px){
-  .grid{grid-template-columns:repeat(4,1fr)}
-  .placa h1{font-size:48px}
-  .foco .caja{min-height:100%;display:grid;grid-template-columns:auto 380px;gap:56px;align-items:center;justify-content:center;padding:48px}
-  .foco .lugar{width:min(40vw,460px,calc((100svh - 120px)*.8));margin:0}
-  .foco .panel{margin:0;padding:0}
-  .cab h2{font-size:52px}
-  .hoja{inset:4vh auto 4vh 50%;transform:translateX(-50%);width:min(1080px,94vw);animation:none}
-  .hoja-in{display:grid;grid-template-columns:1.1fr 1fr;gap:12px;align-items:start}
-  .galeria{padding:0 0 24px var(--gut)}
-  .info{padding:0 36px 36px}
-  .acciones{position:static;border:0;padding:28px 0 0;background:none}
-  .nota{text-align:left}
-  .minis{display:flex;gap:8px;margin-top:10px}
-  .minis button{width:64px;aspect-ratio:4/5;padding:0;border:1px solid transparent;background:var(--mesa);overflow:hidden}
-  .minis button[aria-current="true"]{border-color:var(--cafe)}
-  .minis img{width:100%;height:100%;object-fit:cover}
-  .puntos{display:none}
+@media (min-width:1080px){
+  .menu{display:flex}
+  .abre{display:none}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sala-in{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:'por fic' 'res fic';gap:10px 64px;align-items:start}
+  .por{grid-area:por;margin:0}
+  .ficha{grid-area:fic;position:sticky;top:96px}
+  .fotos{grid-area:res;display:grid;grid-template-columns:1fr 1fr;gap:10px;overflow:visible;margin:0;padding:0}
+  .ficha h1{font-size:64px}
+  .plano-w{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:56px;align-items:start}
+  .vista{display:block;position:sticky;top:100px}
+  .vista .ph img{position:absolute;inset:0}
+  .modal{background:rgba(82,42,10,.4)}
+  .modal .caja{background:var(--m);width:min(1120px,94vw);margin:4vh auto;min-height:0}
+  .pz{grid-template-columns:1.15fr 1fr;gap:36px;padding:0 0 36px}
+  .gal{flex-direction:column;overflow:visible;padding-left:var(--g)}
+  .gal .ph{flex:none}
+  .inf{padding:0 36px 0 0;position:sticky;top:70px;align-self:start}
+  .pedir{position:static;border:0;padding:24px 0 0;background:none}
+  .pedir p{text-align:left}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.ap{opacity:1;transform:none}}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s}
 </style>
 </head>
 <body>
+<div class="franja">Envíos a toda Colombia · Pedidos por WhatsApp<span class="dir"> · Av. 9A #7N-111, Granada, Cali</span></div>
 <header class="top" id="top">
-  <div class="wrap">
-    <div class="bar">
-      <a href="#/" aria-label="CURATA, inicio"><span class="wm" style="width:92px"></span></a>
-      <a class="wa-link" id="waTop" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos</a>
-    </div>
-    <nav class="nav et" id="nav" aria-label="Departamentos"></nav>
+  <div class="w bar">
+    <a href="#/" aria-label="CURATA, inicio"><span class="wm"></span></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#/plano" data-r="plano">Recorrido</a>
+      <a href="#/comprar/colombia" data-r="colombia">Hecho en Colombia</a>
+      <a href="#/comprar/internacional" data-r="internacional">Internacional</a>
+      <a href="#/comprar" data-r="comprar">Comprar</a>
+      <a class="ico" id="waTop" href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"></a>
+    </nav>
+    <button class="ico abre" type="button" id="abre" aria-expanded="false" aria-controls="capa">Menú <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
   </div>
+  <div class="prog" id="prog" hidden><i></i></div>
 </header>
-
-<section class="mesa" id="mesa" aria-label="La mesa de la semana">
-  <div class="mesa-top" id="mesaTop"></div>
-  <div class="pista" id="pista"><div class="lienzo" id="lienzo"></div></div>
-  <div class="mesa-pie"><span class="et guia" id="guia">Desliza para recorrer la mesa</span><span class="flechas"><button type="button" data-mover="-1" aria-label="Mover la mesa a la izquierda">←</button><button type="button" data-mover="1" aria-label="Mover la mesa a la derecha">→</button></span><button class="ir" type="button" data-ircatalogo>Ver catálogo ↓</button></div>
-</section>
-<div class="foco" id="foco" role="dialog" aria-modal="true" aria-labelledby="focoNom" hidden></div>
-
-<main class="wrap">
-  <div class="cab" id="cab"></div>
-  <div class="tools" id="tools">
-    <label class="buscar"><span class="sr">Buscar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar por producto o marca" autocomplete="off" enterkeyhint="search"></label>
-    <label class="sel"><span class="sr">Marca</span><select id="fMarca"></select></label>
-    <label class="sel"><span class="sr">Talla</span><select id="fTalla"></select></label>
-    <label class="sel"><span class="sr">Ordenar</span><select id="fOrden"><option value="rec">Destacados</option><option value="new">Lo más nuevo</option><option value="asc">Menor precio</option><option value="desc">Mayor precio</option></select></label>
-  </div>
-  <p class="cuenta" id="cuenta" aria-live="polite"></p>
-  <div id="cuerpo"><div class="grid" id="grid"></div></div>
-</main>
-
+<div class="capa" id="capa" hidden></div>
+<main id="app"></main>
 <footer class="pie">
-  <div class="wrap">
+  <div class="w">
     <span class="logo" aria-label="CURATA GALERÍA"><span class="wm"></span><span class="gal" aria-hidden="true"><span>GALERÍA</span></span></span>
-    <p class="frase">Lo distinto, sobre la misma mesa.</p>
+    <p>Las marcas de Distrito Juanambú, en un solo recorrido. Te confirmamos talla, disponibilidad y envío por WhatsApp antes de cada pedido. Precios en pesos colombianos.</p>
     <span class="et">by Distrito Juanambú · Cali</span>
-    <div class="cols">
-      <div><span class="et">Escríbenos</span><p><a id="waPie" href="#" target="_blank" rel="noopener">WhatsApp</a></p></div>
-      <div><span class="et">Síguenos</span><p id="igPie">Instagram</p></div>
-      <div><span class="et">Visítanos</span><p>Distrito Juanambú<br>Av. 9A #7N-111, Granada, Cali</p></div>
-    </div>
-    <p class="legal">Precios en pesos colombianos. Antes de cada pedido te confirmamos talla, disponibilidad y envío por WhatsApp.</p>
+    <p><a id="waPie" href="#" target="_blank" rel="noopener">WhatsApp</a> · <a id="igPie" href="https://www.instagram.com/distritojuanambu/" target="_blank" rel="noopener">Instagram</a> · Av. 9A #7N-111, Granada, Cali</p>
   </div>
 </footer>
-
-<div class="ficha" id="ficha" role="dialog" aria-modal="true" aria-labelledby="fNom">
-  <div class="velo" data-cerrar></div>
-  <div class="hoja" id="hoja"></div>
-</div>
 <div class="toast" id="toast" role="status"></div>
-
 <script>
-/* CONFIGURACIÓN: hoja de Google compartida como "Cualquier persona con el enlace: Lector".
-   Pestañas: Productos, Ajustes y Marcas. Sin SHEET_ID se muestra una vista de ejemplo. */
+/* Datos: hoja de Google "CURATA GALERÍA — Catálogo" (cualquier persona con el enlace puede verla).
+   Pestañas: Marcas (una fila por sala), Productos (una fila por pieza, con precio) y Ajustes. */
 var SHEET_ID = '1XghjIwfRyXiBwEqABOxwMHMXqg0XCbx5xaNPna388Nw';
 (function () {
   'use strict';
-  var WA = document.querySelector('#waTop svg').outerHTML;
-  var S = { prods: [], aj: {}, marcas: {}, deps: [], vista: 'todo', clave: '', q: '', marca: '', talla: '', orden: 'rec', abierto: null, sel: {} };
-  var $ = function (s) { return document.querySelector(s); };
-  var CACHE = 'curata-v2';
+  var SALAS = ['Ropa', 'Zapatos', 'Bolsos y cuero', 'Joyería', 'Accesorios', 'Casa, arte y plantas', 'Café'];
+  var WA_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>';
+  var X_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+  var S = { marcas: [], prods: [], aj: {}, f: { ala: '', dep: '', marca: '', talla: '', orden: 'rec' }, sel: {}, p: null };
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var app = $('#app');
 
+  /* Utilidades */
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function norm(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); }
   function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
-  function lista(s) { return String(s || '').split(/[,;\n\/|]+/).map(function (x) { return x.trim(); }).filter(Boolean); }
-  function cop(n) { return n ? '$' + Math.round(n).toLocaleString('es-CO').replace(/,/g, '.') : ''; }
+  function lista(s, sep) { return String(s || '').split(sep || /[,;\n\/|]+/).map(function (x) { return x.trim(); }).filter(Boolean); }
+  function cop(n) { return '$' + Math.round(n).toLocaleString('es-CO').replace(/,/g, '.'); }
   function num(v) { var s = String(v == null ? '' : v).trim().replace(/[.,]\d{2}$/, '').replace(/[^\d]/g, ''); return s ? Number(s) : 0; }
   function si(v) { return /^(s[ií]|x|true|1)$/i.test(String(v || '').trim()); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
   function toast(t) { var e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function () { e.classList.remove('on'); }, 2200); }
   function foto(u, w) {
     u = String(u || '').trim(); if (!u) return '';
     var m = u.match(/\/d\/([\w-]{20,})/) || u.match(/[?&]id=([\w-]{20,})/);
-    if (m && /google/.test(u)) return 'https://lh3.googleusercontent.com/d/' + m[1] + '=w' + (w || 900);
+    if (m && /google/.test(u)) return 'https://lh3.googleusercontent.com/d/' + m[1] + '=w' + (w || 1000);
     if (/^https?:\/\//.test(u)) return u;
     return /^[\w\-./]+\.(jpe?g|png|webp|avif)$/i.test(u) ? u : '';
   }
-  function fotosDe(p) { return String(p.fotos || '').split(/[\s,;|]+/).filter(function (u) { return foto(u); }); }
-  /* Talla ordenada: letras, luego números */
-  var ORD = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'unica'];
-  function ordTalla(a, b) { var ia = ORD.indexOf(norm(a)), ib = ORD.indexOf(norm(b)); if (ia > -1 || ib > -1) return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); return (parseFloat(a) || 0) - (parseFloat(b) || 0); }
+  function fotos(s) { return String(s || '').split(/[\s,;|]+/).map(function (u) { return foto(u); }).filter(Boolean); }
+  function img(u, w, alt, extra) { return u ? '<img src="' + esc(foto(u, w)) + '" alt="' + esc(alt || '') + '" loading="lazy" decoding="async" onload="this.classList.add(\'ok\')" onerror="this.remove()"' + (extra || '') + '>' : ''; }
 
+  /* Lectura de la hoja */
   function csv(t) {
     var F = [], f = [], c = '', q = false;
     for (var i = 0; i < t.length; i++) {
@@ -310,324 +291,288 @@ var SHEET_ID = '1XghjIwfRyXiBwEqABOxwMHMXqg0XCbx5xaNPna388Nw';
   function tabla(filas, campos) {
     if (!filas.length) return [];
     var cab = filas[0].map(function (h) { return campos[norm(h).replace(/[^a-z]/g, '')] || ''; });
-    return filas.slice(1).map(function (r, i) { var o = { fila: i + 2 }; cab.forEach(function (k, j) { if (k) o[k] = (r[j] || '').trim(); }); return o; });
+    return filas.slice(1).map(function (r, i) { var o = { fila: i + 2 }; cab.forEach(function (k, j) { if (k && !o[k]) o[k] = (r[j] || '').trim(); }); return o; });
   }
-  var CP = { codigo: 'codigo', departamento: 'departamento', marca: 'marca', nombre: 'nombre', producto: 'nombre', precio: 'precio', tallas: 'tallas', talla: 'tallas', colores: 'colores', color: 'colores', descripcion: 'descripcion', fotos: 'fotos', foto: 'fotos', estado: 'estado', destacado: 'destacado', origen: 'origen' };
-  var CM = { marca: 'nombre', nombre: 'nombre', instagram: 'instagram', origen: 'origen', descripcion: 'descripcion', logo: 'logo' };
+  var CM = { id: 'id', marca: 'nombre', nombre: 'nombre', instagram: 'ig', origen: 'origen', ciudad: 'ciudad', sala: 'sala', espacio: 'espacio', quienesson: 'quien', descripcion: 'quien', comolohacen: 'como', quemirar: 'mirar', web: 'web', fotos: 'fotos', orden: 'orden', mostrar: 'mostrar' };
+  var CP = { codigo: 'codigo', departamento: 'dep', marca: 'marca', nombre: 'nombre', producto: 'nombre', precio: 'precio', tallas: 'tallas', talla: 'tallas', colores: 'colores', color: 'colores', descripcion: 'desc', materiales: 'mat', fotos: 'fotos', foto: 'fotos', estado: 'estado', destacado: 'dest' };
+  function marcas(filas) {
+    return tabla(filas, CM).filter(function (m) { return m.nombre && (!m.mostrar || si(m.mostrar)); }).map(function (m) {
+      m.id = m.id || slug(m.nombre); m.ig = String(m.ig || '').replace(/^@/, '');
+      m.int = /internac/i.test(m.origen); m.sala = SALAS.indexOf(m.sala) > -1 ? m.sala : (m.sala || 'Ropa');
+      m.fotosL = fotos(m.fotos); m.mirarL = lista(m.mirar, /\s*\|\s*|\n/); m.orden = Number(m.orden) || m.fila;
+      return m;
+    }).sort(function (a, b) { return (a.int - b.int) || (SALAS.indexOf(a.sala) - SALAS.indexOf(b.sala)) || (a.orden - b.orden); })
+      .map(function (m, i) { m.n = i + 1; return m; });
+  }
   function productos(filas) {
     return tabla(filas, CP).filter(function (p) {
-      if (!p.nombre) return false;
       var e = norm(p.estado);
-      if (/^(oculto|borrador)/.test(e)) return false;
-      p.agotado = /^agotado/.test(e); p.precioN = num(p.precio); p.cod = (p.codigo || 'P' + p.fila).toUpperCase();
-      p.dest = si(p.destacado); p.departamento = p.departamento || 'Otros'; p.tallasL = lista(p.tallas).sort(ordTalla);
-      return true;
+      if (!p.nombre || /^(oculto|borrador)/.test(e)) return false;
+      p.precioN = num(p.precio); if (!p.precioN) return false;
+      p.agotado = /^agotado/.test(e); p.cod = (p.codigo || 'P' + p.fila).toUpperCase(); p.destN = si(p.dest);
+      p.tallasL = lista(p.tallas); p.coloresL = lista(p.colores); p.fotosL = fotos(p.fotos);
+      return p.fotosL.length > 0;
     });
   }
-  function marcas(filas) { var m = {}; tabla(filas, CM).forEach(function (b) { if (b.nombre) m[slug(b.nombre)] = b; }); return m; }
-  function ajustes(filas) {
-    var a = {}, dc = -1, deps = [];
-    (filas[0] || []).forEach(function (h, i) { if (norm(h).indexOf('departamento') === 0) dc = i; });
-    filas.forEach(function (f, i) { if (!i) return; var k = norm(f[0]).replace(/[^a-z]/g, ''); if (k) a[k] = (f[1] || '').trim(); if (dc > -1 && f[dc] && f[dc].trim()) deps.push(f[dc].trim()); });
-    a.deps = deps; return a;
-  }
-  function leer(hoja) {
-    return fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&headers=1&sheet=' + encodeURIComponent(hoja), { cache: 'no-store' })
+  function ajustes(filas) { var a = {}; filas.forEach(function (f, i) { if (!i) return; var k = norm(f[0]).replace(/[^a-z]/g, ''); if (k) a[k] = (f[1] || '').trim(); }); return a; }
+  function leer(h) {
+    return fetch('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&headers=1&sheet=' + encodeURIComponent(h), { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function (t) { if (/^\s*</.test(t)) throw new Error('privada'); return csv(t); });
   }
-  function ejemplo() {
-    var d = [['Código', 'Departamento', 'Marca', 'Nombre', 'Precio', 'Tallas', 'Colores', 'Descripción', 'Fotos', 'Estado']];
-    ['Zapatos', 'Accesorios', 'Blusas', 'Zapatos', 'Blusas', 'Accesorios'].forEach(function (dp, i) { d.push(['EJ-' + (i + 1), dp, 'Marca de ejemplo', 'Producto de ejemplo ' + (i + 1), '', dp === 'Zapatos' ? '36, 37, 38' : dp === 'Blusas' ? 'S, M, L' : '', '', 'Vista de ejemplo.', '', i === 3 ? 'Agotado' : 'Disponible']); });
-    return { prods: productos(d), aj: { deps: ['Zapatos', 'Accesorios', 'Blusas'] }, marcas: {} };
-  }
-  function guardar(d) { try { localStorage.setItem(CACHE, JSON.stringify({ id: SHEET_ID, d: d })); } catch (e) {} }
-  function cache() { try { var c = JSON.parse(localStorage.getItem(CACHE) || 'null'); return c && c.id === SHEET_ID ? c.d : null; } catch (e) { return null; } }
   function cargar() {
-    if (!SHEET_ID) { usar(ejemplo()); return; }
-    var c = cache(); if (c) usar(c);
-    Promise.all([leer('Productos'), leer('Ajustes').catch(function () { return []; }), leer('Marcas').catch(function () { return []; })])
-      .then(function (r) { var d = { prods: productos(r[0]), aj: ajustes(r[1]), marcas: marcas(r[2]) }; guardar(d); usar(d); })
-      .catch(function () { if (!c) { $('#grid').innerHTML = '<div class="vacio">No pudimos cargar la mesa en este momento. Revisa tu conexión e intenta de nuevo.<br><button class="btn claro" type="button" onclick="location.reload()">Reintentar</button></div>'; $('#cuenta').textContent = ''; } });
+    var c = null; try { c = JSON.parse(localStorage.getItem('curata-v3') || 'null'); } catch (e) {}
+    if (c) usar(c);
+    var fuente = window.CURATA_DATOS ? Promise.resolve(window.CURATA_DATOS) : Promise.all([leer('Marcas'), leer('Productos').catch(function () { return []; }), leer('Ajustes').catch(function () { return []; })]);
+    fuente.then(function (r) { var d = { m: r[0], p: r[1], a: r[2] }, j = JSON.stringify(d); try { localStorage.setItem('curata-v3', j); } catch (e) {} if (!c || JSON.stringify(c) !== j) usar(d); })
+      .catch(function () { if (!c) app.innerHTML = '<div class="w sec"><p class="in">No pudimos abrir el recorrido en este momento. Revisa tu conexión e intenta de nuevo.</p><button class="btn cl" onclick="location.reload()">Reintentar</button></div>'; });
   }
-
-  /* Datos derivados */
-  function marcaDe(p) { return S.marcas[slug(p.marca)] || null; }
-  function origenDe(p) { var m = marcaDe(p); return p.origen || (m && m.origen) || ''; }
-  function etiqueta(p) { return [p.marca, origenDe(p), p.departamento].filter(Boolean).join(' · '); }
-  function igUrl(h) { h = String(h || '').trim().replace(/^@/, ''); return !h ? '' : /^https?:/.test(h) ? h : 'https://www.instagram.com/' + h + '/'; }
-  function igTxt(h) { return '@' + String(h).replace(/^https?:\/\/(www\.)?instagram\.com\//, '').replace(/^@/, '').replace(/\/$/, ''); }
+  function usar(d) {
+    S.marcas = marcas(d.m); S.aj = ajustes(d.a || []);
+    var por = {}; S.marcas.forEach(function (m) { por[slug(m.nombre)] = m; por[m.id] = m; });
+    S.prods = productos(d.p || []).map(function (p) { p.m = por[slug(p.marca)] || null; return p; });
+    S.marcas.forEach(function (m) { m.piezas = S.prods.filter(function (p) { return p.m === m; }); if (!m.fotosL.length) m.fotosL = m.piezas.map(function (p) { return p.fotosL[0]; }).slice(0, 4); });
+    var g = waLink(S.aj.mensaje || 'Hola, vengo del recorrido de CURATA y quiero más información.') || '#';
+    $('#waTop').href = g; $('#waTop').innerHTML = WA_SVG; $('#waPie').href = g;
+    if (S.aj.instagram) $('#igPie').href = 'https://www.instagram.com/' + S.aj.instagram.replace(/^@|https?:\/\/(www\.)?instagram\.com\/|\/$/g, '') + '/';
+    ruta();
+  }
 
   /* WhatsApp */
-  function waNum() { return String(S.aj.whatsapp || '').replace(/\D/g, ''); }
-  function waLink(t) { var n = waNum(); return n ? 'https://wa.me/' + n + '?text=' + encodeURIComponent(t) : ''; }
-  function linkP(p) { return location.href.split('#')[0] + '#/p/' + encodeURIComponent(p.cod); }
+  function waLink(t) { var n = String(S.aj.whatsapp || '573202107143').replace(/\D/g, ''); return n ? 'https://wa.me/' + n + '?text=' + encodeURIComponent(t) : ''; }
+  function base() { return location.href.split('#')[0]; }
   function pedido(p) {
-    var l = [p.agotado ? 'Hola, ¿vuelve a estar disponible este producto de CURATA?' : 'Hola, me interesa este producto de CURATA:', '', '• ' + p.nombre + (p.marca ? ' — ' + p.marca : '')];
+    var l = [p.agotado ? 'Hola, ¿vuelve a estar disponible esta pieza de CURATA?' : 'Hola, quiero pedir esta pieza de CURATA:', '', '• ' + p.nombre + (p.marca ? ' — ' + p.marca : '')];
     if (S.sel.talla) l.push('• Talla: ' + S.sel.talla); else if (p.tallasL.length) l.push('• Talla: (por definir)');
     if (S.sel.color) l.push('• Color: ' + S.sel.color);
-    if (p.precioN) l.push('• Precio: ' + cop(p.precioN));
-    l.push('• Código: ' + p.cod, '', linkP(p));
+    l.push('• Precio: ' + cop(p.precioN), '• Código: ' + p.cod, '', base() + '#/p/' + encodeURIComponent(p.cod));
     return l.join('\n');
   }
 
-  function usar(d) {
-    S.prods = d.prods; S.aj = d.aj || {}; S.marcas = d.marcas || {};
-    var vis = {}; S.deps = [];
-    (S.aj.deps || []).concat(S.prods.map(function (p) { return p.departamento; })).forEach(function (x) { var k = slug(x); if (k && !vis[k]) { vis[k] = 1; S.deps.push(x); } });
-    construirMesa();
-    var g = waLink(S.aj.mensaje || 'Hola, vengo del catálogo de CURATA y quiero más información.') || '#';
-    $('#waTop').href = g; $('#waPie').href = g;
-    var ig = S.aj.instagram; $('#igPie').innerHTML = ig ? '<a href="' + esc(igUrl(ig)) + '" target="_blank" rel="noopener">' + esc(igTxt(ig)) + '</a>' : 'Instagram';
-    ruta(true);
-  }
-
-  function opciones() {
-    var base = S.prods.filter(function (p) { return enVista(p); });
-    var ms = {}, ts = {};
-    base.forEach(function (p) { if (p.marca) ms[p.marca] = 1; p.tallasL.forEach(function (t) { ts[t] = 1; }); });
-    var mk = Object.keys(ms).sort(function (a, b) { return a.localeCompare(b, 'es'); }), tk = Object.keys(ts).sort(ordTalla);
-    if (S.marca && !ms[S.marca]) S.marca = ''; if (S.talla && !ts[S.talla]) S.talla = '';
-    $('#fMarca').innerHTML = '<option value="">Marca</option>' + mk.map(function (m) { return '<option' + (m === S.marca ? ' selected' : '') + '>' + esc(m) + '</option>'; }).join('');
-    $('#fTalla').innerHTML = '<option value="">Talla</option>' + tk.map(function (t) { return '<option' + (t === S.talla ? ' selected' : '') + '>' + esc(t) + '</option>'; }).join('');
-    $('#fMarca').parentNode.hidden = mk.length < 2 || S.vista === 'marca';
-    $('#fTalla').parentNode.hidden = !tk.length;
-  }
-  function enVista(p) {
-    if (S.vista === 'dep') return slug(p.departamento) === S.clave;
-    if (S.vista === 'marca') return slug(p.marca) === S.clave;
-    return true;
-  }
-  function filtrados() {
-    var q = norm(S.q);
-    var l = S.prods.filter(function (p) {
-      if (!enVista(p)) return false;
-      if (S.marca && p.marca !== S.marca) return false;
-      if (S.talla && p.tallasL.indexOf(S.talla) < 0) return false;
-      if (q && norm([p.nombre, p.marca, p.departamento, p.colores, p.cod].join(' ')).indexOf(q) < 0) return false;
-      return true;
-    });
-    var o = S.orden;
-    return l.sort(function (a, b) {
-      if (o === 'asc') return (a.precioN || 9e15) - (b.precioN || 9e15);
-      if (o === 'desc') return b.precioN - a.precioN;
-      if (o === 'new') return b.fila - a.fila;
-      return (a.agotado - b.agotado) || (b.dest - a.dest) || (a.fila - b.fila);
-    });
-  }
-
-  function nav() {
-    var c = {}; S.prods.forEach(function (p) { var k = slug(p.departamento); c[k] = (c[k] || 0) + 1; });
-    var h = '<a href="#/"' + (S.vista === 'todo' ? ' aria-current="page"' : '') + '>Todo</a>';
-    S.deps.forEach(function (d) { var k = slug(d); if (!c[k] && !(S.vista === 'dep' && S.clave === k)) return; h += '<a href="#/' + k + '"' + (S.vista === 'dep' && S.clave === k ? ' aria-current="page"' : '') + '>' + esc(d) + '</a>'; });
-    h += '<a href="#/marcas"' + (S.vista === 'marcas' || S.vista === 'marca' ? ' aria-current="page"' : '') + '>Marcas</a>';
-    $('#nav').innerHTML = h;
-    var a = $('#nav [aria-current]'); if (a && a.scrollIntoView) a.scrollIntoView({ block: 'nearest', inline: 'center' });
-  }
-
+  /* Piezas */
   function tarjeta(p) {
-    var f = fotosDe(p)[0];
-    return '<button class="card" type="button" data-cod="' + esc(p.cod) + '"><div class="ph">' +
-      (f ? '<img src="' + esc(foto(f, 700)) + '" alt="' + esc(p.nombre + (p.marca ? ' de ' + p.marca : '')) + '" loading="lazy" decoding="async" data-ok="0" onload="this.dataset.ok=1" onerror="this.remove()">' : '') + '<span class="pend et">Foto pendiente</span>' +
-      '</div><p class="et">' + esc(etiqueta(p)) + '</p><p class="nom">' + esc(p.nombre) + '</p>' +
-      '<p class="pre">' + (p.agotado ? '<span class="ago">Agotado</span>' : p.precioN ? cop(p.precioN) : '<span class="ago">Pregunta el precio</span>') + '</p></button>';
+    var f = p.fotosL;
+    return '<button class="card" type="button" data-p="' + esc(p.cod) + '"><div class="ph">' + img(f[0], 700, p.nombre + (p.marca ? ' de ' + p.marca : '')) + (f[1] ? img(f[1], 700, '', ' class="dos" aria-hidden="true"') : '') + '</div>' +
+      '<span class="et">' + esc([p.marca, p.dep].filter(Boolean).join(' · ')) + '</span><span class="nm">' + esc(p.nombre) + '</span>' +
+      '<span class="pr">' + (p.agotado ? 'Agotado' : cop(p.precioN)) + '</span>' + (p.tallasL.length ? '<span class="tl">' + esc(p.tallasL.join(' · ')) + '</span>' : '') + '</button>';
   }
 
-  function pintar() {
-    nav();
-    var t = $('#tools'), cab = '', vistaMarcas = S.vista === 'marcas';
-    $('#mesa').hidden = S.vista !== 'todo';
-    if (S.vista === 'todo') cab = '<span class="et">Para quien ya sabe qué busca</span><h2>Todo el catálogo.</h2>';
-    else if (S.vista === 'dep') cab = '<span class="et">Departamento</span><h2>' + esc((S.deps.filter(function (d) { return slug(d) === S.clave; })[0]) || 'Departamento') + '</h2>';
-    else if (vistaMarcas) cab = '<span class="et">Marcas</span><h2>Quién está en la mesa.</h2><p>Cada marca conserva su foto, su color y su historia. Aquí te decimos de quién es cada cosa y desde dónde viene.</p>';
-    else if (S.vista === 'marca') {
-      var m = S.marcas[S.clave] || {}, n = m.nombre || (S.prods.filter(function (p) { return slug(p.marca) === S.clave; })[0] || {}).marca || 'Marca';
-      var lg = foto(m.logo, 400);
-      cab = (lg ? '<img class="mlogo" src="' + esc(lg) + '" alt="Logo de ' + esc(n) + '">' : '') + '<span class="et">' + esc(['Marca', m.origen].filter(Boolean).join(' · ')) + '</span><h2>' + esc(n) + '</h2>' +
-        (m.descripcion ? '<p>' + esc(m.descripcion) + '</p>' : '') + (m.instagram ? '<a class="ig" href="' + esc(igUrl(m.instagram)) + '" target="_blank" rel="noopener">' + esc(igTxt(m.instagram)) + '</a>' : '');
+  /* Vistas */
+  function entrada() {
+    var col = S.marcas.filter(function (m) { return !m.int; }), int = S.marcas.filter(function (m) { return m.int; });
+    var heroes = S.marcas.filter(function (m) { return m.fotosL.length && m.sala !== 'Café'; });
+    var h1 = []; SALAS.forEach(function (s) { var m = heroes.filter(function (x) { return x.sala === s; })[0]; if (m) h1.push(m); });
+    heroes.forEach(function (m) { if (h1.length < 7 && h1.indexOf(m) < 0) h1.push(m); });
+    var dest = S.prods.filter(function (p) { return !p.agotado; }).sort(function (a, b) { return (b.destN - a.destN) || (a.fila - b.fila); }).slice(0, 8);
+    var h = '<div class="w"><section class="hero">' +
+      '<div class="escena"><div class="ph" id="esc">' + h1.map(function (m, i) { return img(m.fotosL[0], 1200, 'Sala de ' + m.nombre, ' data-i="' + i + '"' + (i ? ' style="opacity:0"' : '')); }).join('') + '</div>' +
+      (h1[0] ? '<a class="cartela" id="cartela" href="#/sala/' + esc(h1[0].id) + '"><span class="et">Sala ' + pad(h1[0].n) + ' · ' + esc(h1[0].nombre) + ' · ' + esc(h1[0].sala) + '</span><span class="lk">Entrar</span></a>' : '') + '</div>' +
+      '<div class="txt"><span class="logo" aria-label="CURATA GALERÍA"><span class="wm"></span><span class="gal" aria-hidden="true"><span>GALERÍA</span></span></span>' +
+      '<h1>Un recorrido por las marcas del Distrito.</h1>' +
+      '<p>' + S.marcas.length + ' marcas, ' + col.length + ' hechas en Colombia. Entra sala por sala, conoce quién está detrás de cada pieza y pide la tuya por WhatsApp.</p>' +
+      '<div class="acc"><a class="btn" href="#/sala/' + esc((S.marcas[0] || {}).id || '') + '">Empezar el recorrido</a><a class="btn cl" href="#/comprar">Ver piezas con precio</a></div>' +
+      '<p class="et su" style="margin:26px 0 0">by Distrito Juanambú · Cali</p></div></section>' +
+      '<section class="sec ap"><span class="et su">Cómo se recorre</span><h2>Tres pasos, sin afán.</h2>' +
+      '<ol class="pasos"><li><b>Entra a una sala</b><span>Cada marca tiene la suya: quién la hace, cómo la hace y qué mirar en sus piezas.</span></li>' +
+      '<li><b>Elige tu pieza</b><span>Mira el precio, las tallas y los materiales. Si tienes dudas, te asesoramos.</span></li>' +
+      '<li><b>Pídela por WhatsApp</b><span>Te confirmamos talla y disponibilidad, y la enviamos a toda Colombia.</span></li></ol></section>' +
+      '<section class="sec ap"><span class="et su">Las dos alas del Distrito</span><h2>De dónde viene cada pieza.</h2><p class="in">Separamos lo hecho en Colombia de lo que llega de afuera, para que sepas qué estás comprando.</p><div class="alas">' +
+      ala('Hecho en Colombia', col, 'colombia', 'Talleres y diseñadores de Cali, Bogotá, Medellín y otras ciudades del país.') +
+      ala('Internacional', int, 'internacional', 'Marcas de otros países que se consiguen en el Distrito.') + '</div></section>' +
+      '<section class="sec ap" id="plano"><span class="et su">El plano</span><h2>Todas las salas.</h2><p class="in">Elige una marca o empieza por la sala 01 y sigue en orden.</p>' + plano() + '</section>' +
+      (dest.length ? '<section class="sec ap"><span class="et su">Piezas del Distrito</span><h2>Con precio, listas para pedir.</h2><div class="grid">' + dest.map(tarjeta).join('') + '</div><p style="margin:30px 0 0"><a class="btn cl" href="#/comprar">Ver todas las piezas</a></p></section>' : '') +
+      visita() + '</div>';
+    app.innerHTML = h;
+    escena(h1);
+  }
+  function ala(t, arr, k, txt) {
+    var f = arr.filter(function (m) { return m.fotosL.length; }).slice(0, 3);
+    return '<a class="ala" href="#/comprar/' + k + '"><div class="mos">' + [0, 1, 2].map(function (i) { return '<div class="ph">' + (f[i] ? img(f[i].fotosL[0], 700, '') : '') + '</div>'; }).join('') + '</div>' +
+      '<span class="et su">' + arr.length + (arr.length === 1 ? ' marca' : ' marcas') + '</span><h3>' + t + '</h3><p>' + txt + '</p></a>';
+  }
+  function plano() {
+    function bloque(t, arr) {
+      if (!arr.length) return '';
+      return '<div><h3>' + t + '</h3><span class="et su">' + arr.length + (arr.length === 1 ? ' marca' : ' marcas') + '</span><div class="gru">' + SALAS.map(function (s) {
+        var a = arr.filter(function (m) { return m.sala === s; }); if (!a.length) return '';
+        return '<div class="gr"><span class="et su">' + esc(s) + '</span><ol>' + a.map(function (m) {
+          return '<li><a href="#/sala/' + esc(m.id) + '" data-v="' + esc(m.fotosL[0] || '') + '"><span class="n">' + pad(m.n) + '</span><span class="nm">' + esc(m.nombre) + '</span><span class="ci">' + esc(m.ciudad === 'Colombia' ? '' : m.ciudad || '') + '</span></a></li>';
+        }).join('') + '</ol></div>';
+      }).join('') + '</div></div>';
     }
-    $('#cab').innerHTML = cab;
-    t.hidden = vistaMarcas;
-    document.title = (S.vista === 'todo' ? '' : ($('#cab h2') ? $('#cab h2').textContent.replace(/\.$/, '') + ' · ' : '')) + 'CURATA GALERÍA';
-    if (vistaMarcas) { $('#cuenta').textContent = ''; pintarMarcas(); return; }
-    opciones();
-    var l = filtrados();
-    $('#cuenta').textContent = l.length === 1 ? '1 producto' : l.length + ' productos';
-    $('#cuerpo').innerHTML = '<div class="grid" id="grid"></div>';
-    if (!l.length) {
-      $('#grid').innerHTML = '<div class="vacio">' + (S.q || S.marca || S.talla ? 'No encontramos productos con esa búsqueda.<br><button class="btn claro" type="button" data-limpiar>Ver todo</button>' : 'Estamos poniendo la mesa. Escríbenos por WhatsApp si buscas algo en particular.') + '</div>';
-      return;
-    }
-    $('#grid').innerHTML = l.map(tarjeta).join('');
+    return '<div class="plano-w"><div class="plano">' + bloque('Hecho en Colombia', S.marcas.filter(function (m) { return !m.int; })) + bloque('Internacional', S.marcas.filter(function (m) { return m.int; })) + '</div>' +
+      '<div class="vista" aria-hidden="true"><div class="ph" id="vph">' + (S.marcas[0] ? img(S.marcas[0].fotosL[0], 800, '') : '') + '</div><p class="et su" id="vtx" style="margin-top:10px">' + esc((S.marcas[0] || {}).nombre || '') + '</p></div></div>';
+  }
+  function visita() {
+    return '<section class="sec ap"><span class="et su">Visítanos</span><h2>El recorrido también es en persona.</h2><div class="visita">' +
+      '<div><h3 class="et">Dónde</h3><p>Distrito Juanambú<br>Av. 9A #7N-111, Granada, Cali</p><p style="margin-top:10px"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=Distrito+Juanamb%C3%BA+Av.+9A+%237N-111+Cali" target="_blank" rel="noopener">Cómo llegar</a></p></div>' +
+      '<div><h3 class="et">Horario de tiendas</h3><p>' + esc(S.aj.horario || 'Lunes a sábado, 10:30 a. m. a 7:30 p. m.') + '</p></div>' +
+      '<div><h3 class="et">Pedidos</h3><p>Escríbenos por WhatsApp y te confirmamos talla, disponibilidad y envío.</p><p style="margin-top:10px"><a class="lk" href="' + esc(waLink(S.aj.mensaje || 'Hola, vengo del recorrido de CURATA.')) + '" target="_blank" rel="noopener">Escribir por WhatsApp</a></p></div></div></section>';
+  }
+  function escena(h1) {
+    clearInterval(escena.t); if (h1.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var i = 0;
+    escena.t = setInterval(function () {
+      var e = $('#esc'); if (!e) return clearInterval(escena.t);
+      var imgs = e.querySelectorAll('img'); if (!imgs.length) return;
+      i = (i + 1) % h1.length;
+      [].forEach.call(imgs, function (x) { x.style.opacity = Number(x.getAttribute('data-i')) === i ? '' : '0'; });
+      var m = h1[i], c = $('#cartela'); if (c && m) { c.href = '#/sala/' + m.id; c.firstChild.textContent = 'Sala ' + pad(m.n) + ' · ' + m.nombre + ' · ' + m.sala; }
+    }, 5200);
   }
 
-  function pintarMarcas() {
-    var c = {}; S.prods.forEach(function (p) { if (!p.marca) return; var k = slug(p.marca); c[k] = c[k] || { n: p.marca, x: 0 }; c[k].x++; });
-    var con = Object.keys(c).sort(function (a, b) { return c[a].n.localeCompare(c[b].n, 'es'); });
-    var h = '<ul class="marcas">' + con.map(function (k) {
-      var m = S.marcas[k] || {};
-      return '<li><a href="#/marca/' + k + '"><span><span class="n">' + esc(m.nombre || c[k].n) + '</span><br><span class="et">' + esc([m.origen, c[k].x + (c[k].x === 1 ? ' producto' : ' productos')].filter(Boolean).join(' · ')) + '</span></span><span aria-hidden="true">→</span></a></li>';
-    }).join('') + '</ul>';
-    var otras = Object.keys(S.marcas).filter(function (k) { return !c[k]; }).sort(function (a, b) { return S.marcas[a].nombre.localeCompare(S.marcas[b].nombre, 'es'); });
-    if (otras.length) h += '<div class="otras"><h3 class="et">También en Distrito Juanambú</h3>' + otras.map(function (k) { var m = S.marcas[k]; return m.instagram ? '<a href="' + esc(igUrl(m.instagram)) + '" target="_blank" rel="noopener">' + esc(m.nombre) + '</a>' : esc(m.nombre); }).join(' · ') + '</div>';
-    $('#cuerpo').innerHTML = h;
+  function sala(id) {
+    var i = -1; S.marcas.forEach(function (m, k) { if (m.id === id) i = k; });
+    if (i < 0) { location.replace('#/plano'); return; }
+    var m = S.marcas[i], ant = S.marcas[i - 1], sig = S.marcas[i + 1], f = m.fotosL;
+    var ala = m.int ? 'Internacional' : 'Hecho en Colombia';
+    var h = '<div class="w sala"><div class="sala-in">' +
+      '<div class="por" id="fts"><div class="ph">' + img(f[0], 1300, 'Pieza de ' + m.nombre) + '</div></div>' +
+      '<article class="ficha"><span class="et su">Sala ' + pad(m.n) + ' de ' + pad(S.marcas.length) + ' · ' + esc(m.sala) + ' · ' + ala + '</span>' +
+      '<h1>' + esc(m.nombre) + '</h1><p class="meta">' + esc([m.ciudad === 'Colombia' ? '' : m.ciudad, m.espacio].filter(Boolean).join(' · ')) + '</p>' +
+      (m.quien ? '<h2 class="et">Quiénes son</h2><p>' + esc(m.quien) + '</p>' : '') +
+      (m.como ? '<h2 class="et">Cómo lo hacen</h2><p>' + esc(m.como) + '</p>' : '') +
+      (m.mirarL.length ? '<h2 class="et">Qué mirar</h2><ol class="mirar">' + m.mirarL.map(function (x) { return '<li><span>' + esc(x) + '</span></li>'; }).join('') + '</ol>' : '') +
+      '<div class="acc">' + (m.piezas.length ? '<a class="btn" href="#piezas" data-ir="piezas">Ver sus piezas (' + m.piezas.length + ')</a>' : '<a class="btn" href="' + esc(waLink('Hola, quiero conocer las piezas de ' + m.nombre + ' en CURATA.')) + '" target="_blank" rel="noopener">' + WA_SVG + 'Preguntar por sus piezas</a>') +
+      (m.ig ? '<a class="btn cl" href="https://www.instagram.com/' + esc(m.ig) + '/" target="_blank" rel="noopener">@' + esc(m.ig) + '</a>' : '') + '</div></article>' +
+      '<div class="fotos">' + f.slice(1).map(function (u) { return '<div class="ph">' + img(u, 800, '') + '</div>'; }).join('') + '</div></div>' +
+      (m.piezas.length ? '<section class="sec" id="piezas" style="margin-top:44px"><span class="et su">Sus piezas</span><h2>' + esc(m.nombre) + ' en el Distrito.</h2><div class="grid">' + m.piezas.map(tarjeta).join('') + '</div></section>' : '') +
+      '<nav class="sigue" aria-label="Recorrido">' +
+      (ant ? '<a href="#/sala/' + esc(ant.id) + '" data-k="prev"><span class="et su">← Sala ' + pad(ant.n) + '</span><b>' + esc(ant.nombre) + '</b></a>' : '<a href="#/plano"><span class="et su">← Volver</span><b>Al plano</b></a>') +
+      (sig ? '<a href="#/sala/' + esc(sig.id) + '" data-k="next"><span class="et su">Sala ' + pad(sig.n) + ' →</span><b>' + esc(sig.nombre) + '</b></a>' : '<a href="#/comprar"><span class="et su">Fin del recorrido →</span><b>Ver todas las piezas</b></a>') +
+      '</nav></div>';
+    app.innerHTML = h;
+    var pr = $('#prog'); pr.hidden = false; pr.firstChild.style.width = ((i + 1) / S.marcas.length * 100) + '%';
+    document.title = 'Sala ' + pad(m.n) + ' · ' + m.nombre + ' · CURATA GALERÍA';
   }
 
-
-  /* ---------- La mesa ---------- */
-  function azar(t) { var h = 2166136261; for (var i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return function (k) { var x = Math.sin(h + k * 999) * 10000; return x - Math.floor(x); }; }
-  function construirMesa() {
-    var M = S.prods.filter(function (p) { return !p.agotado && fotosDe(p).length; }).sort(function (a, b) { return (b.dest - a.dest) || (a.fila - b.fila); }).slice(0, 16);
-    var mesa = $('#mesa'), W = mesa.clientWidth || window.innerWidth, H = mesa.clientHeight || 600, movil = W < 700, T = 0;
-    var lema = esc(S.aj.lema || 'Lo distinto, sobre la misma mesa.');
-    $('#mesaTop').innerHTML = movil ? '<span class="et">La mesa de la semana</span><h1>' + lema + '</h1>' : '';
-    if (movil) T = $('#mesaTop').offsetHeight + 8;
-    $('#pista').style.top = T + 'px'; H -= T;
-    var filas = H >= 420 ? 2 : 1, alto = (H - 60) / filas;
-    var ow = Math.min(alto * 0.68, movil ? W * 0.44 : 290), oh = ow * 1.25;
-    var izq = movil ? 16 : Math.max(16, (W - 1240) / 2 + 16);
-    var x0 = movil ? 16 : izq + 440, paso = ow * (movil ? 1.06 : 1.1);
-    var h = movil ? '' : '<div class="placa"><span class="logo" aria-label="CURATA GALERÍA"><span class="wm"></span><span class="gal" aria-hidden="true"><span>GALERÍA</span></span></span>' +
-      '<span class="et sup">La mesa de la semana</span><h1>' + lema + '</h1><p>' + esc(S.aj.frase || 'Las marcas que reúne Distrito Juanambú, en una sola mesa. Compra desde Cali o desde cualquier parte de Colombia.') + '</p><span class="et firma">by Distrito Juanambú · Cali</span></div>';
-    M.forEach(function (p, i) {
-      var c = filas === 2 ? Math.floor(i / 2) : i, r = filas === 2 ? i % 2 : 0, a = azar(p.cod);
-      var x = Math.max(10, x0 + c * paso + (r ? paso * 0.48 : 0) + (a(1) - 0.5) * ow * 0.16);
-      var y = r * alto + Math.max(8, (alto - oh - 22) / 2 + (a(2) - 0.5) * Math.min(40, alto - oh - 22));
-      var rot = ((a(3) - 0.5) * 9).toFixed(1);
-      h += '<button class="obj" type="button" data-foco="' + esc(p.cod) + '" style="left:' + Math.round(x) + 'px;top:' + Math.round(y) + 'px;width:' + Math.round(ow) + 'px;--r:' + rot + 'deg" aria-label="' + esc(p.nombre + (p.marca ? ' de ' + p.marca : '')) + '"><span class="ft"><img src="' + esc(foto(fotosDe(p)[0], 800)) + '" alt="" draggable="false" onerror="this.closest(\'.obj\').remove()"></span><span class="et">' + esc(etiqueta(p)) + '</span></button>';
+  function comprar(k) {
+    var f = S.f; f.ala = k === 'colombia' || k === 'internacional' ? k : (k === undefined ? f.ala : '');
+    if (k && k !== 'colombia' && k !== 'internacional') f.dep = S.prods.filter(function (p) { return slug(p.dep) === k; }).map(function (p) { return p.dep; })[0] || '';
+    var base0 = S.prods.filter(function (p) { return !f.ala || (f.ala === 'internacional') === !!(p.m && p.m.int); });
+    var deps = []; base0.forEach(function (p) { if (p.dep && deps.indexOf(p.dep) < 0) deps.push(p.dep); });
+    if (f.dep && deps.indexOf(f.dep) < 0) f.dep = '';
+    var b1 = base0.filter(function (p) { return !f.dep || p.dep === f.dep; });
+    var mk = [], tk = []; b1.forEach(function (p) { if (p.marca && mk.indexOf(p.marca) < 0) mk.push(p.marca); p.tallasL.forEach(function (t) { if (tk.indexOf(t) < 0) tk.push(t); }); });
+    if (f.marca && mk.indexOf(f.marca) < 0) f.marca = ''; if (f.talla && tk.indexOf(f.talla) < 0) f.talla = '';
+    var l = b1.filter(function (p) { return (!f.marca || p.marca === f.marca) && (!f.talla || p.tallasL.indexOf(f.talla) > -1); }).sort(function (a, b) {
+      if (f.orden === 'asc') return a.precioN - b.precioN; if (f.orden === 'desc') return b.precioN - a.precioN;
+      return (a.agotado - b.agotado) || (b.destN - a.destN) || (a.fila - b.fila);
     });
-    var cols = filas === 2 ? Math.ceil(M.length / 2) : M.length;
-    var ancho = M.length ? x0 + (cols - 1) * paso + (filas === 2 && M.length > 1 ? paso * 0.48 : 0) + ow * 1.15 + 24 : W;
-    $('#lienzo').style.width = Math.max(W, Math.round(ancho)) + 'px';
-    $('#lienzo').innerHTML = h;
-    S.mesaAncho = W;
-    $('#guia').textContent = M.length ? (movil ? 'Desliza la mesa · toca un objeto' : 'Arrastra la mesa · haz clic en un objeto') : 'Estamos poniendo la mesa';
-    $('#pista').classList.toggle('mano', !movil);
+    var tit = f.ala === 'colombia' ? 'Hecho en Colombia.' : f.ala === 'internacional' ? 'Internacional.' : 'Piezas del Distrito.';
+    var chip = function (g, v, t) { return '<button class="chip" type="button" data-f="' + g + '" data-v="' + esc(v) + '" aria-pressed="' + (f[g] === v) + '">' + esc(t) + '</button>'; };
+    var opt = function (arr, cur, t) { return '<option value="">' + t + '</option>' + arr.sort(function (a, b) { return a.localeCompare(b, 'es', { numeric: true }); }).map(function (x) { return '<option' + (x === cur ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join(''); };
+    app.innerHTML = '<div class="w"><div class="cab"><span class="et su">Comprar</span><h2>' + tit + '</h2><p>Precios en pesos colombianos. Te confirmamos talla y envío por WhatsApp.</p></div>' +
+      '<div class="filtros" role="group" aria-label="Origen">' + chip('ala', '', 'Todo') + chip('ala', 'colombia', 'Hecho en Colombia') + chip('ala', 'internacional', 'Internacional') + '</div>' +
+      (deps.length > 1 ? '<div class="filtros" role="group" aria-label="Departamento">' + chip('dep', '', 'Todos') + deps.map(function (d) { return chip('dep', d, d); }).join('') + '</div>' : '') +
+      '<div class="sels"><label><span hidden>Marca</span><select data-s="marca">' + opt(mk, f.marca, 'Marca') + '</select></label><label><span hidden>Talla</span><select data-s="talla"' + (tk.length ? '' : ' disabled') + '>' + opt(tk, f.talla, 'Talla') + '</select></label>' +
+      '<label><span hidden>Orden</span><select data-s="orden"><option value="rec"' + (f.orden === 'rec' ? ' selected' : '') + '>Destacadas</option><option value="asc"' + (f.orden === 'asc' ? ' selected' : '') + '>Menor precio</option><option value="desc"' + (f.orden === 'desc' ? ' selected' : '') + '>Mayor precio</option></select></label></div>' +
+      '<p class="cuenta">' + (l.length === 1 ? '1 pieza' : l.length + ' piezas') + '</p><div class="grid">' +
+      (l.length ? l.map(tarjeta).join('') : '<div class="vacio">' + (S.prods.length ? 'No hay piezas con estos filtros.' : 'Estamos subiendo las piezas con su precio. Mientras tanto, recorre las salas y pregúntanos por WhatsApp.') + '<p><a class="btn cl" href="#/plano">Ir al plano</a></p></div>') +
+      '</div></div>';
+    document.title = tit.replace('.', '') + ' · CURATA GALERÍA';
   }
-  function abrirFoco(cod, el) {
-    var p = S.prods.filter(function (x) { return x.cod === cod; })[0]; if (!p) return;
-    var img = el.querySelector('img'), r0 = img.getBoundingClientRect(), rot = parseFloat(el.style.getPropertyValue('--r')) || 0;
-    S.foco = { cod: cod, el: el, rot: rot }; S.abierto = p; S.sel = {};
-    if (p.tallasL.length === 1) S.sel.talla = p.tallasL[0];
-    var cs = lista(p.colores); if (cs.length === 1) S.sel.color = cs[0];
-    var f = $('#foco');
-    f.innerHTML = '<button class="x" type="button" data-cerrarfoco aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button>' +
-      '<div class="caja"><div class="lugar"><img src="' + esc(img.currentSrc || img.src) + '" alt="' + esc(p.nombre) + '"></div><div class="panel"><p class="et">' + esc(etiqueta(p)) + '</p><h2 id="focoNom">' + esc(p.nombre) + '</h2>' +
-      '<p class="pre">' + (p.precioN ? cop(p.precioN) : 'Pregunta el precio') + '</p>' +
-      (p.tallasL.length ? '<div class="grupo"><h3 class="et">Talla</h3><div class="chips" data-g="talla">' + p.tallasL.map(function (v) { return '<button class="chip" type="button" aria-pressed="' + (S.sel.talla === v) + '" data-v="' + esc(v) + '">' + esc(v) + '</button>'; }).join('') + '</div></div>' : '') +
-      '<div class="acc"><a class="btn" id="pedir" href="#" target="_blank" rel="noopener">' + WA + '<span>Pedir por WhatsApp</span></a></div>' +
-      '<p class="nota">' + (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.</p>' +
-      '<button class="mas" type="button" data-detalle="' + esc(cod) + '">Ver fotos y detalles</button></div></div>';
-    f.hidden = false; document.body.style.overflow = 'hidden'; actualizar();
-    var big = f.querySelector('.lugar img'), r1 = big.getBoundingClientRect(), k = r0.width / r1.width;
-    el.classList.add('fuera');
-    if (big.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches) big.animate([{ transformOrigin: '0 0', transform: 'translate(' + (r0.left - r1.left) + 'px,' + (r0.top - r1.top) + 'px) scale(' + k + ') rotate(' + rot + 'deg)' }, { transformOrigin: '0 0', transform: 'none' }], { duration: 480, easing: 'cubic-bezier(.2,.8,.2,1)' });
-    requestAnimationFrame(function () { f.classList.add('on'); });
-    history.pushState({ foco: cod }, '', '#/p/' + encodeURIComponent(cod));
-    document.title = p.nombre + ' · CURATA GALERÍA';
-    setTimeout(function () { var x = f.querySelector('.x'); if (x) x.focus({ preventScroll: true }); }, 60);
-  }
-  function cerrarFoco(hist, rapido) {
-    var F = S.foco; if (!F) return; S.foco = null; S.abierto = null;
-    var f = $('#foco'), big = f.querySelector('.lugar img');
-    function fin() { f.hidden = true; f.innerHTML = ''; F.el.classList.remove('fuera'); document.body.style.overflow = ''; document.title = 'CURATA GALERÍA'; if (!rapido) F.el.focus({ preventScroll: true }); }
-    f.classList.remove('on');
-    if (!rapido && big && big.animate && document.contains(F.el)) {
-      var r0 = F.el.querySelector('img').getBoundingClientRect(), r1 = big.getBoundingClientRect();
-      big.animate([{ transformOrigin: '0 0', transform: 'none' }, { transformOrigin: '0 0', transform: 'translate(' + (r0.left - r1.left) + 'px,' + (r0.top - r1.top) + 'px) scale(' + (r0.width / r1.width) + ') rotate(' + F.rot + 'deg)' }], { duration: 380, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' }).onfinish = fin;
-    } else fin();
-    if (!hist) { if (history.state && history.state.foco) history.back(); else history.replaceState(null, '', '#/'); }
-  }
-  /* Arrastrar la mesa con el mouse */
-  (function () {
-    var pi = $('#pista'), x0 = 0, s0 = 0, on = false;
-    pi.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button) return; on = true; S.drag = false; x0 = e.clientX; s0 = pi.scrollLeft; });
-    window.addEventListener('pointermove', function (e) { if (!on) return; var d = e.clientX - x0; if (Math.abs(d) > 6) { S.drag = true; pi.classList.add('arrastre'); } if (S.drag) pi.scrollLeft = s0 - d; });
-    window.addEventListener('pointerup', function () { if (!on) return; on = false; pi.classList.remove('arrastre'); setTimeout(function () { S.drag = false; }, 0); });
-    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (Math.abs(window.innerWidth - (S.mesaAncho || 0)) > 40 && !S.foco) construirMesa(); }, 200); });
-  })();
-  /* Ficha */
-  function abrir(cod, sinHist) {
+
+  function pieza(cod) {
     var p = S.prods.filter(function (x) { return x.cod === cod; })[0];
-    if (!p) { history.replaceState(null, '', '#/'); return; }
-    S.abierto = p; S.sel = {};
-    var fs = fotosDe(p), cs = lista(p.colores), m = marcaDe(p);
-    if (p.tallasL.length === 1) S.sel.talla = p.tallasL[0];
-    if (cs.length === 1) S.sel.color = cs[0];
-    var gal = fs.length ? fs.map(function (u, i) { return '<div class="ph"><img src="' + esc(foto(u, 1400)) + '" alt="' + esc(p.nombre) + ', foto ' + (i + 1) + '"' + (i ? ' loading="lazy"' : '') + ' data-ok="0" onload="this.dataset.ok=1"></div>'; }).join('') : '<div class="ph"><span class="pend et">Foto pendiente</span></div>';
-    function chips(g, arr) { return '<div class="grupo"><h3 class="et">' + (g === 'talla' ? 'Talla' : 'Color') + '</h3><div class="chips" data-g="' + g + '">' + arr.map(function (v) { return '<button class="chip" type="button" aria-pressed="' + (S.sel[g] === v) + '" data-v="' + esc(v) + '">' + esc(v) + '</button>'; }).join('') + '</div></div>'; }
-    $('#hoja').innerHTML = '<div class="hoja-top"><span class="et">' + esc(p.departamento) + '</span><button class="x" type="button" data-cerrar aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>' +
-      '<div class="hoja-in"><div class="galeria"><div class="fotos" id="fotos">' + gal + '</div>' +
-      (fs.length > 1 ? '<div class="puntos" id="puntos">' + fs.map(function (_, i) { return '<i' + (i ? '' : ' class="on"') + '></i>'; }).join('') + '</div><div class="minis" id="minis">' + fs.map(function (u, i) { return '<button type="button" data-i="' + i + '" aria-label="Foto ' + (i + 1) + '" aria-current="' + (i === 0) + '"><img src="' + esc(foto(u, 200)) + '" alt=""></button>'; }).join('') + '</div>' : '') +
-      '</div><div class="info"><p class="et">' + esc(etiqueta(p)) + '</p><h2 id="fNom">' + esc(p.nombre) + '</h2>' +
-      '<p class="pre">' + (p.precioN ? cop(p.precioN) : 'Pregunta el precio') + (p.agotado ? ' · Agotado' : '') + '</p>' +
-      (p.tallasL.length ? chips('talla', p.tallasL) : '') + (cs.length ? chips('color', cs) : '') +
-      (p.descripcion ? '<div class="grupo"><h3 class="et">Detalles</h3><p class="desc">' + esc(p.descripcion) + '</p></div>' : '') +
-      (p.marca ? '<div class="sobre"><h3 class="et">Sobre ' + esc(p.marca) + '</h3>' + (m && m.descripcion ? '<p>' + esc(m.descripcion) + '</p>' : '') + '<a href="#/marca/' + slug(p.marca) + '" data-irmarca>Ver todo de ' + esc(p.marca) + ' →</a></div>' : '') +
-      '<p class="cod">Código ' + esc(p.cod) + '</p>' +
-      '<div class="acciones"><div class="fila"><a class="btn" id="pedir" href="#" target="_blank" rel="noopener">' + WA + '<span>' + (p.agotado ? 'Preguntar disponibilidad' : 'Pedir por WhatsApp') + '</span></a><button class="btn claro" type="button" id="compartir" aria-label="Compartir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v13M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg></button></div>' +
-      '<p class="nota">' + (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.</p></div></div></div>';
-    $('#hoja').scrollTop = 0; actualizar();
-    $('#ficha').classList.add('on'); document.body.style.overflow = 'hidden';
+    if (!p) { cerrarP(); return; }
+    S.p = p; S.sel = {}; if (p.tallasL.length === 1) S.sel.talla = p.tallasL[0]; if (p.coloresL.length === 1) S.sel.color = p.coloresL[0];
+    var m = p.m, ops = function (g, arr) { return '<div class="grupo"><span class="et">' + (g === 'talla' ? 'Talla' : 'Color') + '</span><div class="ops" data-g="' + g + '">' + arr.map(function (v) { return '<button class="chip" type="button" data-o="' + esc(v) + '" aria-pressed="' + (S.sel[g] === v) + '">' + esc(v) + '</button>'; }).join('') + '</div></div>'; };
+    var d = document.createElement('div'); d.className = 'modal'; d.id = 'modal'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true'); d.setAttribute('aria-label', p.nombre);
+    d.innerHTML = '<div class="caja"><div class="x"><span class="et su">' + esc(m ? 'Sala ' + pad(m.n) + ' · ' + m.nombre : p.marca) + '</span><button type="button" data-cerrar aria-label="Cerrar">' + X_SVG + '</button></div><div class="pz">' +
+      '<div class="gal">' + p.fotosL.map(function (u, k) { return '<div class="ph">' + img(u, 1300, k ? '' : p.nombre) + '</div>'; }).join('') + '</div>' +
+      '<div class="inf"><span class="et">' + esc([p.marca, p.dep, m ? (m.int ? 'Internacional' : 'Hecho en Colombia') : ''].filter(Boolean).join(' · ')) + '</span><h2>' + esc(p.nombre) + '</h2>' +
+      '<p class="pr">' + cop(p.precioN) + (p.agotado ? ' · Agotado' : '') + '</p>' +
+      (p.tallasL.length ? ops('talla', p.tallasL) : '') + (p.coloresL.length ? ops('color', p.coloresL) : '') +
+      '<div class="grupo">' + (p.desc ? '<details open><summary class="et">Detalles</summary><p>' + esc(p.desc) + '</p></details>' : '') +
+      (p.mat ? '<details><summary class="et">Materiales</summary><p>' + esc(p.mat) + '</p></details>' : '') +
+      (m ? '<details><summary class="et">Sobre ' + esc(m.nombre) + '</summary><p>' + esc(m.quien || '') + '</p><p><a class="lk" href="#/sala/' + esc(m.id) + '">Ir a su sala</a></p></details>' : '') +
+      '<details><summary class="et">Envíos y pedidos</summary><p>Enviamos a toda Colombia. Antes de cada pedido te confirmamos por WhatsApp la talla, la disponibilidad y el costo del envío. Código de la pieza: ' + esc(p.cod) + '.</p></details></div>' +
+      '<div class="pedir"><a class="btn" id="pedir" href="#" target="_blank" rel="noopener">' + WA_SVG + (p.agotado ? 'Preguntar disponibilidad' : 'Pedir por WhatsApp') + '</a><p id="nota"></p></div></div></div></div>';
+    var vieja = $('#modal'); if (vieja) vieja.remove(); document.body.appendChild(d); document.body.style.overflow = 'hidden'; actualizar();
+    d.querySelectorAll('img').forEach(function (x) { if (x.complete && x.naturalWidth) x.classList.add('ok'); });
+    setTimeout(function () { var b = d.querySelector('[data-cerrar]'); if (b) b.focus({ preventScroll: true }); }, 40);
     document.title = p.nombre + ' · CURATA GALERÍA';
-    if (!sinHist) history.pushState({ p: cod }, '', '#/p/' + encodeURIComponent(cod));
-    var fo = $('#fotos'); if (fs.length > 1) fo.addEventListener('scroll', function () { var i = Math.round(fo.scrollLeft / fo.clientWidth); [].forEach.call(document.querySelectorAll('#puntos i'), function (e, j) { e.classList.toggle('on', i === j); }); [].forEach.call(document.querySelectorAll('#minis button'), function (e, j) { e.setAttribute('aria-current', i === j); }); }, { passive: true });
-    setTimeout(function () { var x = $('#hoja .x'); if (x) x.focus({ preventScroll: true }); }, 30);
   }
   function actualizar() {
-    var a = $('#pedir'), p = S.abierto; if (!a || !p) return;
-    var l = waLink(pedido(p)); a.href = l || '#'; a.setAttribute('aria-disabled', l ? 'false' : 'true');
-    var n = $('.nota'); if (n) n.textContent = (p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella. ' : '') + 'Enviamos a toda Colombia.';
+    var a = $('#pedir'), p = S.p; if (!a || !p) return;
+    a.href = waLink(pedido(p)) || '#';
+    $('#nota').textContent = p.tallasL.length && !S.sel.talla ? 'Elige tu talla o pregúntanos por ella.' : 'Enviamos a toda Colombia.';
   }
-  function cerrar(hist) {
-    if (!S.abierto) return;
-    var cod = S.abierto.cod; S.abierto = null;
-    $('#ficha').classList.remove('on'); $('#hoja').innerHTML = ''; document.body.style.overflow = '';
-    if (!hist) { if (history.state && history.state.p) history.back(); else history.replaceState(null, '', '#/'); }
-    var c = document.querySelector('.card[data-cod="' + cod.replace(/"/g, '') + '"]'); if (c) c.focus({ preventScroll: true });
+  function cerrarP(silencio) { var d = $('#modal'); if (d) d.remove(); S.p = null; if (!silencio) document.body.style.overflow = ''; }
+
+  /* Menú móvil: el plano completo */
+  function capa(abrir) {
+    var c = $('#capa'), b = $('#abre');
+    if (!abrir) { c.hidden = true; b.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; return; }
+    c.innerHTML = '<div class="bar"><a href="#/" aria-label="CURATA, inicio"><span class="wm" style="width:104px"></span></a><button class="ico" type="button" data-cerrarcapa>Cerrar ' + X_SVG + '</button></div>' +
+      '<div class="w"><div class="filtros"><a class="chip" style="display:inline-flex;align-items:center;text-decoration:none" href="#/comprar">Comprar</a><a class="chip" style="display:inline-flex;align-items:center;text-decoration:none" href="#/comprar/colombia">Hecho en Colombia</a><a class="chip" style="display:inline-flex;align-items:center;text-decoration:none" href="#/comprar/internacional">Internacional</a></div>' + plano() + '</div>';
+    c.hidden = false; b.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden';
   }
 
-  /* Rutas: #/  #/zapatos  #/marcas  #/marca/pisos  #/p/CODIGO */
-  function ruta(ini) {
-    var h = decodeURIComponent(location.hash.replace(/^#\/?/, '')), m = h.match(/^p\/(.+)$/);
-    if (S.foco && !(m && m[1] === S.foco.cod)) cerrarFoco(true);
-    if (m && S.foco) return;
-    if (m) { if (ini || !S.vistaLista) { S.vista = S.vista || 'todo'; pintar(); S.vistaLista = 1; } if (!S.abierto || S.abierto.cod !== m[1]) abrir(m[1], true); return; }
-    if (S.abierto) cerrar(true);
-    var mm = h.match(/^marca\/(.+)$/), k = slug(h);
-    if (mm) { S.vista = 'marca'; S.clave = slug(mm[1]); }
-    else if (k === 'marcas') { S.vista = 'marcas'; S.clave = ''; }
-    else if (k && S.deps.some(function (d) { return slug(d) === k; })) { S.vista = 'dep'; S.clave = k; }
-    else { S.vista = 'todo'; S.clave = ''; }
-    S.vistaLista = 1; pintar();
-    if (!ini) { var c = $('#cab'); if (window.scrollY > c.offsetTop) window.scrollTo(0, Math.max(0, c.offsetTop - 110)); }
+  /* Rutas: #/  #/plano  #/sala/satori  #/comprar  #/comprar/colombia  #/comprar/zapatos  #/p/CODIGO */
+  var antes = '';
+  function ruta() {
+    if (!S.marcas.length && !S.prods.length) return;
+    var h = decodeURIComponent(location.hash.replace(/^#\/?/, '')), m;
+    capa(false);
+    if ((m = h.match(/^p\/(.+)$/))) { if (!app.innerHTML) { entrada(); S.vista = ''; } pieza(m[1]); return; }
+    if ($('#modal') && h === S.vista) { cerrarP(); return; }
+    cerrarP(); S.vista = h;
+    var vista = h.split('/')[0];
+    var hacer = function () {
+      $('#prog').hidden = true; clearInterval(escena.t);
+      if (vista === 'sala') sala(h.split('/')[1]);
+      else if (vista === 'comprar') comprar(h.split('/')[1] || '');
+      else if (vista === 'plano') { entrada(); var p = $('#plano'); if (p) setTimeout(function () { window.scrollTo(0, p.getBoundingClientRect().top + window.scrollY - 70); }, 0); }
+      else { entrada(); document.title = 'CURATA GALERÍA · by Distrito Juanambú'; }
+      if (vista !== 'plano') window.scrollTo(0, 0);
+      [].forEach.call(document.querySelectorAll('#menu a[data-r]'), function (a) { var r = a.getAttribute('data-r'); var on = r === vista || (vista === 'comprar' && (r === S.f.ala || (r === 'comprar' && !S.f.ala))); if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+      aparecer();
+    };
+    if (document.startViewTransition && antes !== h && antes && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.startViewTransition(hacer); else hacer();
+    antes = h;
+  }
+  function aparecer() {
+    var els = document.querySelectorAll('.ap:not(.in)');
+    if (!('IntersectionObserver' in window)) { [].forEach.call(els, function (e) { e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    [].forEach.call(els, function (e) { io.observe(e); });
   }
 
+  /* Eventos */
   document.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-foco],[data-cerrarfoco],[data-detalle],[data-mover],[data-ircatalogo],[data-cod],[data-cerrar],[data-limpiar],.chip,#compartir,#minis button,#pedir,[data-irmarca]');
-    if (!t) { if (S.foco && e.target === $('#foco') || (S.foco && e.target.classList && e.target.classList.contains('caja'))) cerrarFoco(); return; }
-    if (t.hasAttribute('data-foco')) { if (!S.drag) abrirFoco(t.getAttribute('data-foco'), t); }
-    else if (t.hasAttribute('data-cerrarfoco')) cerrarFoco();
-    else if (t.hasAttribute('data-detalle')) { var cd = t.getAttribute('data-detalle'); cerrarFoco(true, true); history.replaceState(null, '', '#/'); abrir(cd); }
-    else if (t.hasAttribute('data-mover')) { var pi = $('#pista'); pi.scrollBy({ left: Number(t.getAttribute('data-mover')) * pi.clientWidth * 0.6, behavior: 'smooth' }); }
-    else if (t.hasAttribute('data-ircatalogo')) { window.scrollTo({ top: $('#cab').getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }
-    else if (t.hasAttribute('data-cod')) abrir(t.getAttribute('data-cod'));
-    else if (t.hasAttribute('data-cerrar')) cerrar();
-    else if (t.hasAttribute('data-irmarca')) { e.preventDefault(); var href = t.getAttribute('href'); cerrar(true); history.replaceState(null, '', href); ruta(false); }
-    else if (t.hasAttribute('data-limpiar')) { S.q = S.marca = S.talla = ''; $('#q').value = ''; pintar(); }
-    else if (t.classList.contains('chip')) { var g = t.parentNode.getAttribute('data-g'), v = t.getAttribute('data-v'), on = S.sel[g] !== v; S.sel[g] = on ? v : ''; [].forEach.call(t.parentNode.children, function (c) { c.setAttribute('aria-pressed', on && c === t); }); actualizar(); }
-    else if (t.id === 'compartir') { var p = S.abierto, u = linkP(p); if (navigator.share) navigator.share({ title: p.nombre, text: p.nombre + (p.marca ? ' de ' + p.marca : '') + ' · CURATA', url: u }).catch(function () {}); else if (navigator.clipboard) navigator.clipboard.writeText(u).then(function () { toast('Enlace copiado'); }); }
-    else if (t.id === 'pedir') { if (t.getAttribute('aria-disabled') === 'true') { e.preventDefault(); toast('Falta el número de WhatsApp en la hoja'); } }
-    else if (t.closest('#minis')) { var f = $('#fotos'); f.scrollTo({ left: f.clientWidth * Number(t.getAttribute('data-i')), behavior: 'smooth' }); }
+    var t = e.target.closest('[data-p],[data-cerrar],[data-f],[data-o],[data-ir],[data-cerrarcapa],#abre,#pedir');
+    if (e.target.closest('#capa a')) capa(false);
+    if (!t) { if (e.target.id === 'modal') cerrarModal(); return; }
+    if (t.hasAttribute('data-p')) location.hash = '#/p/' + encodeURIComponent(t.getAttribute('data-p'));
+    else if (t.hasAttribute('data-cerrar')) cerrarModal();
+    else if (t.hasAttribute('data-f')) { S.f[t.getAttribute('data-f')] = t.getAttribute('data-v'); if (t.getAttribute('data-f') === 'ala') { S.vista = 'comprar' + (S.f.ala ? '/' + S.f.ala : ''); history.replaceState(null, '', '#/' + S.vista); } comprar(); }
+    else if (t.hasAttribute('data-o')) { var g = t.parentNode.getAttribute('data-g'), v = t.getAttribute('data-o'), on = S.sel[g] !== v; S.sel[g] = on ? v : ''; [].forEach.call(t.parentNode.children, function (c) { c.setAttribute('aria-pressed', on && c === t); }); actualizar(); }
+    else if (t.hasAttribute('data-ir')) { e.preventDefault(); var d = document.getElementById(t.getAttribute('data-ir')); if (d) window.scrollTo({ top: d.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' }); }
+    else if (t.hasAttribute('data-cerrarcapa')) capa(false);
+    else if (t.id === 'abre') capa($('#capa').hidden);
   });
-  var tq; $('#q').addEventListener('input', function (e) { clearTimeout(tq); tq = setTimeout(function () { S.q = e.target.value; pintar(); }, 120); });
-  $('#fMarca').addEventListener('change', function (e) { S.marca = e.target.value; pintar(); });
-  $('#fTalla').addEventListener('change', function (e) { S.talla = e.target.value; pintar(); });
-  $('#fOrden').addEventListener('change', function (e) { S.orden = e.target.value; pintar(); });
-  window.addEventListener('hashchange', function () { ruta(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (S.foco) cerrarFoco(); else cerrar(); } });
-  window.addEventListener('scroll', function () { $('#top').classList.toggle('scrolled', window.scrollY > 4); }, { passive: true });
-  $('#grid').innerHTML = new Array(9).join('<div class="card skel"><div class="ph"></div></div>');
+  var antesP = false;
+  function cerrarModal() { if (antesP) history.back(); else { cerrarP(); history.replaceState(null, '', '#/' + (S.vista || '')); } }
+  window.addEventListener('hashchange', function (e) { antesP = /#\/p\//.test(location.hash) && !!e.oldURL; ruta(); });
+  document.addEventListener('change', function (e) { var s = e.target.getAttribute('data-s'); if (s) { S.f[s] = e.target.value; comprar(); } });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { if ($('#modal')) $('[data-cerrar]').click(); else if (!$('#capa').hidden) capa(false); return; }
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName) || $('#modal')) return;
+    var k = e.key === 'ArrowRight' ? 'next' : e.key === 'ArrowLeft' ? 'prev' : ''; if (!k) return;
+    var a = $('.sigue a[data-k="' + k + '"]'); if (a) location.hash = a.getAttribute('href');
+  });
+  /* Deslizar entre salas en el celular (sobre las fotos) */
+  var tx = 0, ty = 0;
+  document.addEventListener('touchstart', function (e) { if (!e.target.closest('#fts')) return; tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', function (e) { if (!tx || !e.target.closest('#fts')) return; var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = 0; if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) { var a = $('.sigue a[data-k="' + (dx < 0 ? 'next' : 'prev') + '"]'); if (a) location.hash = a.getAttribute('href'); } }, { passive: true });
+  /* Vista previa del plano al pasar el mouse */
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest('.plano a[data-v]'); if (!a) return; var v = a.closest('.plano-w'); if (!v) return;
+    var ph = v.querySelector('#vph'), tx2 = v.querySelector('#vtx'); if (!ph) return;
+    var u = a.getAttribute('data-v'); ph.innerHTML = u ? img(u, 800, '') : ''; tx2.textContent = a.querySelector('.nm').textContent;
+  });
   cargar();
 })();
 </script>
